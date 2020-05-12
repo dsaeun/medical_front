@@ -11,7 +11,7 @@ class Home extends Component {
         <div>
           <Header></Header>
           <Switch>
-            <Route path="./page/Checkbox" component={Checkbox}></Route>
+            <Route path="/Checkbox" component={Checkbox}></Route>
           </Switch>
         </div>
       </Router>
