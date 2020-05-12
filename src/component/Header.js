@@ -10,7 +10,7 @@ class Header extends Component {
         <div className="menu">
           <img className="logo" src={samsung} aria-hidden alt="logo image"></img>
           <ul>
-            <li><Link to="/Checkbox">증상정보 찾기</Link></li>
+            <li><Link to="./Checkbox">증상정보 찾기</Link></li>
             <li>약학정보 찾기</li>
             <li>근처병원 찾기</li>
             <li>근처약국 찾기</li>
