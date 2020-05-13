@@ -33,7 +33,7 @@ a{
 
 .partstyle{
   background-color: rgba(204, 204, 255, 0.4);
-  width:27%;
+  width:30%;
   height:450px;
   float:left;
   padding:20px;
@@ -41,7 +41,7 @@ a{
 
 .symstyle{
   background-color: rgba(204, 204, 255, 0.4);
-  width:58%;
+  width:60%;
   height:450px;
   float:left;
   margin-left: 10px;
@@ -70,4 +70,45 @@ input[radio]{
   padding-top:0;
   margin-top:10px;
   display: block;
+}
+
+button {
+  width:100px;
+  height:30px;
+  float: right;
+  margin:20px;
+}
+
+.listup{
+  background-color: rgba(204, 204, 255, 0.4);
+  width:100%;
+  height:100%;
+}
+
+table .listTable{
+  padding:20px;
+  height:120px;
+}
+
+.detailTable{
+    padding:20px;
+}
+
+td{
+  padding:10px;
+}
+
+.disimage{
+  width:120px;
+  height:120px;
+}
+
+.detailimage{
+  width:200px;
+  height:200px;
+}
+
+.detailback{
+  background-color: rgba(204, 204, 255, 0.4);
+  height: 100%;
 }
