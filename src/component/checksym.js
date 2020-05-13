@@ -1,21 +1,38 @@
 import React, {Component} from 'react';
 
 class checksym extends Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            symData: [
+                {sym : "머리가 아픔"},
+                {sym : "배가 아픔"}
+            ]
+        };
+      }
+      
     render(){
         return(
             <div className="symstyle">
                 <ul className="checklist">
-                    <li className="checkli">
-                    <label><input type="radio" name="sym" value="sym1"/>귀가 아픔</label>
-                    </li>
-                    
-                    <li className="checkli">
-                    <label><input type="radio" name="sym" value="sym2"/>관자놀이가 아픔</label>
-                    </li>
+                {this.state.symData.map((symDes, i) => {
+                return (<SymInfo sym={symDes.sym}
+                  key={i}/>);
+                  })}
                 </ul>
             </div>
         );
     }
 }
 
+  class SymInfo extends Component{
+    render(){
+      return(
+        <li className="checkli">
+          <input type="radio" name="sym" value={this.props.sym}/>{this.props.sym}
+        </li>
+      );
+    }
+  }
+  
 export default checksym;
