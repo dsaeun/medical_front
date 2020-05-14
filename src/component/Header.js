@@ -11,9 +11,9 @@ class Header extends Component {
           <img className="logo" src={samsung} aria-hidden alt="logo image"></img>
           <ul>
             <li><Link to="./Checkbox">증상정보 찾기</Link></li>
-            <li>약학정보 찾기</li>
-            <li>근처병원 찾기</li>
-            <li>근처약국 찾기</li>
+            <li><Link to="./Medicine">약학정보 찾기</Link></li>
+            <li><Link to="./Hospital">근처병원 찾기</Link></li>
+            <li><Link to="./Parmacy">근처약국 찾기</Link></li>
           </ul>
         </div>
       </header>
