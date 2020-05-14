@@ -72,7 +72,7 @@ input[radio]{
   display: block;
 }
 
-button {
+.saveSearchButton {
   width:100px;
   height:30px;
   float: right;
@@ -111,4 +111,48 @@ td{
 .detailback{
   background-color: rgba(204, 204, 255, 0.4);
   height: 100%;
+}
+
+.checkedBox{
+  width:100px;
+  height:50px;
+}
+
+
+.hospitalList{
+  background-color: rgba(204, 204, 255, 0.4);
+  width:20%;
+  height:450px;
+  float:left;
+  padding:20px;
+}
+
+.hospitalMap{
+  background-color: rgba(204, 204, 255, 0.4);
+  width:70%;
+  height:450px;
+  float:left;
+  margin-left: 10px;
+  padding:20px;
+}
+
+h1 {
+  margin-top:40px;
+  margin-bottom: 20px;
+}
+
+.searchMedicine{
+  width:90%;
+  height:35px;
+  display:inline-block;
+}
+
+.medicineBtn{
+  width:8%;
+  height: 41px;
+  display:inline-block;
+}
+
+.MedicineSearchDiv{
+  margin:0 auto;
 }

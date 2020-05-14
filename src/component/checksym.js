@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class checksym extends Component{
+class Checksym extends Component{
     constructor(props) {
         super(props);
         this.state = {
@@ -35,4 +35,4 @@ class checksym extends Component{
     }
   }
   
-export default checksym;
+export default Checksym;
