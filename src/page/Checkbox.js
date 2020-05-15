@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import '../App.css';
-import Checksym from '../component/Checksym';
+import Checksym from '../component/checksym';
 import Checkpart from '../component/Checkpart';
 import {Link} from "react-router-dom";
 
@@ -16,8 +16,8 @@ class Checkbox extends Component {
       <div className="contentalign">
         <h1>증상정보 찾기</h1>
         <Checked></Checked>
-        <Checkpart></Checkpart>
-        <Checksym></Checksym>
+        <Checkpart></Checkpart> {/*part 선택자 하나를 리턴 */}
+        <Checksym></Checksym> {/*sym 선택자 하나를 리턴 */}
         <button onClick={this.handleClick} className="saveSearchButton">Save</button>
         <button className="saveSearchButton"><Link to="./Listup">Search</Link></button>
       </div>
