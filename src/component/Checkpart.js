@@ -10,7 +10,6 @@ class Checkpart extends Component {
             {part : "배"}
         ]
     };
-    
   }
 
   render(){

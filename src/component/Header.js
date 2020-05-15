@@ -8,7 +8,7 @@ class Header extends Component {
     return (
       <header>
         <div className="menu">
-          <img className="logo" src={samsung} aria-hidden alt="logo image"></img>
+          <Link to="./Home"><img className="logo" src={samsung} aria-hidden alt="logo image"></img></Link>
           <ul>
             <li><Link to="./Checkbox">증상정보 찾기</Link></li>
             <li><Link to="./Medicine">약학정보 찾기</Link></li>
