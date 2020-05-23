@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import Header from './component/Header';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Checkbox from './page/Checkbox';
+import CheckBoxContainer from "./container/CheckBoxContainer";
 import Listup from './page/Listup';
 import Detail from './page/Detail';
 import Hospital from './page/Hospital';
@@ -21,7 +21,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home}></Route>
             <Route path="/Home" component={Home}></Route>
-            <Route path="/Checkbox" component={Checkbox}></Route>
+            <Route path="/Checkbox" component={CheckBoxContainer}></Route>
             <Route path="/Listup" component={Listup}></Route>
             <Route path="/Detail" component={Detail}></Route>
             <Route path="/Hospital" component={Hospital}></Route>
