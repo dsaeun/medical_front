@@ -5,14 +5,9 @@ import CheckPart from "../component/CheckPart";
 import { PartConsumer, SymptomsConsumer } from "../container/CheckBoxContainer";
 import { Link } from "react-router-dom";
 
-class Checkbox extends Component {
+class CheckBox extends Component {
   state = {
     part: "",
-  };
-
-  handleClick = () => {
-    //save 버튼을 누르면 이벤트로 sym의 정보를 변수에 저장.
-    //저장한 변수를 아래 Checked 클래스의 <div>안에 넣어서 증상정보 찾기 타이틀 아래에 뜨게,,
   };
 
   render() {
@@ -25,11 +20,10 @@ class Checkbox extends Component {
                 <h1>증상정보 찾기</h1>
                 {symptoms && <Checked symptoms={symptoms}></Checked>}
                 <CheckPart></CheckPart>
-                {/*part 선택자 하나를 리턴 */}
-                {part && <CheckSym partId={part}></CheckSym>}
-                <button onClick={this.handleClick} className="saveSearchButton">
-                  Save
-                </button>
+                {/**
+                 * div 태그 안에 symptom 공백란 추가
+                 */}
+                {part ? <CheckSym partId={part}></CheckSym> : <div></div>}
                 <button className="saveSearchButton">
                   <Link to="./Listup">Search</Link>
                 </button>
@@ -43,9 +37,7 @@ class Checkbox extends Component {
 }
 
 class Checked extends Component {
-  onDelete = () => {
-
-  };
+  onDelete = () => {};
 
   render() {
     const symptomBoxList = this.props.symptoms.map((symptom, index) => (
@@ -57,4 +49,4 @@ class Checked extends Component {
   }
 }
 
-export default Checkbox;
+export default CheckBox;

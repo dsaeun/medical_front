@@ -1,5 +1,5 @@
 import React, { Component, createContext } from "react";
-import Checkbox from "../page/Checkbox";
+import CheckBox from "../page/CheckBox";
 
 const PartContext = createContext({
   part: "",
@@ -71,7 +71,7 @@ class CheckBoxContainer extends Component {
     return (
       <PartProvider>
         <SymptomsProvider>
-          <Checkbox />
+          <CheckBox />
         </SymptomsProvider>
       </PartProvider>
     );
