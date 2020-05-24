@@ -74,7 +74,7 @@ class ListUpInfo extends Component {
               state: {
                 id,
               }
-            }}>{name}</Link>
+            }} className="disName">{name}</Link>
           </td>
         </tr>
         <tr>

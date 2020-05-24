@@ -50,14 +50,14 @@ class DetailInfo extends Component {
   render() {
     const { name, cure, sym, img, hos } = this.props;
     const symptomList = sym.map((symptom, index) => (
-      <td className="detailTable" key={index}>
+      <span key={index}>
         {symptom.name}
-      </td>
+      </span>
     ));
     return (
       <table>
         <tr>
-          <td className="detailTable" rowSpan="3">
+          <td rowSpan="3">
             <img
               className="detailimage"
               src={img}
@@ -67,17 +67,17 @@ class DetailInfo extends Component {
           </td>
         </tr>
         <tr>
-          <td className="detailTable">{name}</td>
+          <td><h3>{name}</h3></td>
         </tr>
         <tr>
-          {symptomList}
-          {/*<td className="detailTable">hi</td>*/}
+          <td>
+          증상 : {symptomList}</td>
         </tr>
         <tr>
-          <td className="detailTable">{cure}</td>
+          <td>치료법 : {cure}</td>
         </tr>
         <tr>
-          <td className="detailTable">{hos}</td>
+          <td>진료 병원 : {hos}</td>
         </tr>
       </table>
     );

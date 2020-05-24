@@ -12,7 +12,7 @@ class CheckPart extends Component {
   };
 
   getPartData = async () => {
-    const result = await axios.get('http://localhost:8000/parts');
+    const result = await axios.get(`${process.env.REACT_APP_API_HOST}/parts`);
     this.setState({
       partData: result.data,
     });
