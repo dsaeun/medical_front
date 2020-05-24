@@ -72,7 +72,6 @@ class DetailInfo extends Component {
         <tr>
           <td>
           증상 : {symptomList}</td>
-          {/*<td className="detailTable">hi</td>*/}
         </tr>
         <tr>
           <td>치료법 : {cure}</td>
