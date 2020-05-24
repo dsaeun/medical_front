@@ -54,7 +54,7 @@ class SymptomsProvider extends Component {
 
     this.removeSymptoms = (symptom) => {
       let nextArray = this.state.symptoms.filter(
-        (symptomIndex) => symptomIndex.id != symptom.id
+        (symptomIndex) => symptomIndex.id !== symptom.id
       );
       this.setState({
         symptoms: nextArray,
