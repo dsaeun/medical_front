@@ -6,8 +6,9 @@ const PartContext = createContext({
   setPart: (part) => {},
 });
 const SymptomsContext = createContext({
-  part: [],
+  symptoms: [],
   setSymptoms: (symptom) => {},
+  removeSymptoms: (symptom) => {},
 });
 
 class PartProvider extends Component {
@@ -51,9 +52,19 @@ class SymptomsProvider extends Component {
       });
     };
 
+    this.removeSymptoms = (symptom) => {
+      let nextArray = this.state.symptoms.filter(
+        (symptomIndex) => symptomIndex.id != symptom.id
+      );
+      this.setState({
+        symptoms: nextArray,
+      });
+    };
+
     this.state = {
       symptoms: [],
       setSymptoms: this.setSymptoms,
+      removeSymptoms: this.removeSymptoms,
     };
   }
 

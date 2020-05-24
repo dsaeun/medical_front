@@ -25,7 +25,16 @@ class CheckBox extends Component {
                  */}
                 {part ? <CheckSym partId={part}></CheckSym> : <div></div>}
                 <button className="saveSearchButton">
-                  <Link to="./Listup">Search</Link>
+                  <Link
+                    to={{
+                      pathname: "/ListUp",
+                      state: {
+                        symptoms,
+                      },
+                    }}
+                  >
+                    Search
+                  </Link>
                 </button>
               </div>
             )}
@@ -37,15 +46,26 @@ class CheckBox extends Component {
 }
 
 class Checked extends Component {
-  onDelete = () => {};
-
   render() {
-    const symptomBoxList = this.props.symptoms.map((symptom, index) => (
-      <div className="checkedBox" key={index}>
-        {symptom.name} {symptom.part}
-      </div>
-    ));
-    return <>{symptomBoxList}</>;
+    const { symptoms } = this.props;
+    return (
+      <SymptomsConsumer>
+        {({ removeSymptoms }) =>
+          symptoms.map((symptom, index) => (
+            <div className="checkedBox" key={index}>
+              <button
+                onClick={() => {
+                  removeSymptoms(symptom);
+                }}
+              >
+                삭제
+              </button>
+              {symptom.name}
+            </div>
+          ))
+        }
+      </SymptomsConsumer>
+    );
   }
 }
 

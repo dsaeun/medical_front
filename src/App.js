@@ -3,7 +3,7 @@ import './App.css';
 import Header from './component/Header';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import CheckBoxContainer from "./container/CheckBoxContainer";
-import Listup from './page/Listup';
+import ListUp from './page/ListUp';
 import Detail from './page/Detail';
 import Hospital from './page/Hospital';
 import Parmacy from './page/Parmacy';
@@ -21,8 +21,8 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home}></Route>
             <Route path="/Home" component={Home}></Route>
-            <Route path="/Checkbox" component={CheckBoxContainer}></Route>
-            <Route path="/Listup" component={Listup}></Route>
+            <Route path="/CheckBox" component={CheckBoxContainer}></Route>
+            <Route path="/ListUp" component={ListUp}></Route>
             <Route path="/Detail" component={Detail}></Route>
             <Route path="/Hospital" component={Hospital}></Route>
             <Route path="/Parmacy" component={Parmacy}></Route>
