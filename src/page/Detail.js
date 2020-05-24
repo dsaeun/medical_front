@@ -1,56 +1,88 @@
 import React, { Component } from "react";
-import '../App.css';
-import disimage from '../image/disimage.png';
+import "../App.css";
+// import disimage from "../image/disimage.png";
+import axios from "axios";
 
-class Detail extends Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            detailData: [
-                {name: "복통", sym : "증상", cure: "치료", hos : "진료병원"}
-            ]
-        };
-      }
+class Detail extends Component {
+  state = {
+    disease: {},
+  };
 
-    render(){
-        return(
-            <div className="contentalign">
-                <div className="detailback">
-                    {this.state.detailData.map((detailDes, i) => {
-                    return (<DetailInfo name={detailDes.name}
-                        sym={detailDes.sym}
-                        cure={detailDes.cure}
-                        hos={detailDes.hos}
-                    key={i}/>);
-                    })}
-                  </div>
-            </div>
-        );
-    }
+  getDiseaseData = async () => {
+    const { id } = this.props.location.state;
+
+    const result = await axios.get(
+      `${process.env.REACT_APP_API_HOST}/diseases/${id}`
+    );
+
+    this.setState({
+      disease: result.data,
+    });
+  };
+
+  componentDidMount() {
+    this.getDiseaseData();
+  }
+
+  render() {
+    const { disease } = this.state;
+    return (
+      <div className="contentalign">
+        <div className="detailback">
+          <DetailInfo
+            name={disease.name}
+            sym={disease.symptoms}
+            cure={disease.cure}
+            img={disease.images}
+            hos={"병원"}
+          />
+        </div>
+      </div>
+    );
+  }
 }
 
-class DetailInfo extends Component{
-    render(){
-      return(
-        <table>
-            <tr>
-                <td className="detailTable" rowSpan="3"><img className="detailimage" src={disimage} aria-hidden alt="disimage"></img></td>
-            </tr>
-            <tr>
-                <td className="detailTable">{this.props.name}</td>
-            </tr>
-            <tr>
-                <td className="detailTable">{this.props.sym}</td>
-            </tr>
-            <tr>
-                <td className="detailTable">{this.props.cure}</td>
-            </tr>
-            <tr>
-                <td className="detailTable">{this.props.hos}</td>
-            </tr>
-        </table>
-      );
-    }
+class DetailInfo extends Component {
+  static defaultProps = {
+    sym: [],
+  };
+
+  render() {
+    const { name, cure, sym, img, hos } = this.props;
+    const symptomList = sym.map((symptom, index) => (
+      <span key={index}>
+        {symptom.name}
+      </span>
+    ));
+    return (
+      <table>
+        <tr>
+          <td rowSpan="3">
+            <img
+              className="detailimage"
+              src={img}
+              aria-hidden
+              alt="disimage"
+            ></img>
+          </td>
+        </tr>
+        <tr>
+          <td><h3>{name}</h3></td>
+        </tr>
+        <tr>
+          <td>
+          증상 : {symptomList}</td>
+          {/*<td className="detailTable">hi</td>*/}
+        </tr>
+        <tr>
+          <td>치료법 : {cure}</td>
+        </tr>
+        <tr>
+          <td>진료 병원 : {hos}</td>
+        </tr>
+      </table>
+    );
   }
-  
+}
+
 export default Detail;

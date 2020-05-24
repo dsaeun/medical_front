@@ -86,18 +86,26 @@ input[radio]{
 }
 
 .listup{
-  background-color: rgba(204, 204, 255, 0.4);
   width:100%;
   height:100%;
 }
 
-table .listTable{
+tr td{
+  text-align: left;
+}
+
+.listTable{
   padding:20px;
   height:120px;
+  width:100%;
+  border:1px solid rgb(4, 73, 95);
+  margin:10px;
+  border-radius: 10px;
 }
 
 .detailTable{
     padding:20px;
+    width:100%
 }
 
 td{
@@ -115,8 +123,10 @@ td{
 }
 
 .detailback{
+  margin-top: 50px;;
   background-color: rgba(204, 204, 255, 0.4);
   height: 100%;
+  border-radius: 10px;
 }
 
 .checkedBox{
@@ -217,4 +227,12 @@ ul li:hover label{
   width: 60%;
   height: 500px;
   position: relative;
+}
+
+.disName{
+  color:black;
+}
+
+span{
+  margin:5px;
 }
