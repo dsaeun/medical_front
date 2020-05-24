@@ -61,8 +61,9 @@ class SymInfo extends Component {
                   part: symPart,
                 });
               }}
-            />
+            /><label>
             {sym}
+            </label>
           </li>
         )}
       </SymptomsConsumer>

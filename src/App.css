@@ -1,11 +1,10 @@
 .menu{
-  width:80%;
-  height:150px;
-  margin:0 auto;
+  background: linear-gradient(30deg, rgb(4, 73, 95), rgb(121, 200, 206));
+  padding:20px;
 }
 
-.logoalign{
-  float:left;
+.findParmacy{
+  padding-right: 100px;
 }
 
 .menu ul {
@@ -23,7 +22,7 @@
 
 a{
   text-decoration: none;
-  color:black;
+  color:white;
 }
 
 .contentalign{
@@ -32,26 +31,32 @@ a{
 }
 
 .partstyle{
-  background-color: rgba(204, 204, 255, 0.4);
+  background-color: rgba(121, 200, 206, 0.5);
   width:30%;
   height:450px;
   float:left;
   padding:20px;
+  border-radius: 20px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .symstyle{
-  background-color: rgba(204, 204, 255, 0.4);
+  background-color: rgba(121, 200, 206, 0.5);
   width:60%;
   height:450px;
   float:left;
   margin-left: 10px;
   padding:20px;
+  border-radius: 20px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
 .logo{
   width:200px;
-  margin-top: 35px;
-  margin-left: 20px;
+  margin-top: 70px;
+  margin-left: 120px;
 }
 
 input[radio]{
@@ -66,17 +71,18 @@ input[radio]{
 }
 
 .checkli{
-  border:0;
   padding-top:0;
   margin-top:10px;
   display: block;
+  height:25px;
 }
 
-.saveSearchButton {
+.SearchButton {
   width:100px;
   height:30px;
-  float: right;
   margin:20px;
+  float:left;
+  background-color: rgb(4, 73, 95);
 }
 
 .listup{
@@ -114,10 +120,14 @@ td{
 }
 
 .checkedBox{
-  width:100px;
-  height:50px;
+  display: inline-block;
+  padding:3px;
+  border-bottom:solid 1px;
+  border-color: rgba(9, 9, 78, 0.4);
+  margin-right: 20px;
+  margin-bottom: 20px;
+  vertical-align: text-bottom;
 }
-
 
 .hospitalList{
   background-color: rgba(204, 204, 255, 0.4);
@@ -155,4 +165,56 @@ h1 {
 
 .MedicineSearchDiv{
   margin:0 auto;
+}
+
+.white{
+  background-color: white;
+  width:500px;
+  height:450px;
+  float:left;
+  padding:20px;
+}
+
+.partLabel{
+}
+
+ul li label{
+  font-weight: normal;
+}
+
+ul li:hover label{
+  font-weight:bolder;
+  transition-duration: 0.3s;
+}
+
+.removeBtn{
+  margin-left:10px;
+  color:black;
+  font-size: 9px;
+  width:20px;
+  height:20px;
+  background-color: rgba(36, 36, 48, 0.15);
+  border-radius: 5px;
+  vertical-align: text-bottom;
+  border-color:rgba(163, 163, 168, 0.3);
+}
+
+.removeBtn:hover{
+  color:white;
+  background-color:black;
+  transition-duration: 1s;
+}
+
+.intro{
+  background-color: rgba(118, 118, 151, 0.2);
+  padding:40px;
+  bottom:0px;
+  position: absolute;
+}
+
+.alignHome{
+  margin: 0 auto;
+  width: 60%;
+  height: 500px;
+  position: relative;
 }
