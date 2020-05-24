@@ -18,13 +18,12 @@ class CheckBox extends Component {
             {({ symptoms }) => (
               <div className="contentalign">
                 <h1>증상정보 찾기</h1>
-                {symptoms && <Checked symptoms={symptoms}></Checked>}
+                <div>
+                  {symptoms && <Checked symptoms={symptoms}></Checked>}
+                </div>
                 <CheckPart></CheckPart>
-                {/**
-                 * div 태그 안에 symptom 공백란 추가
-                 */}
-                {part ? <CheckSym partId={part}></CheckSym> : <div></div>}
-                <button className="saveSearchButton">
+                {part ? <CheckSym partId={part}></CheckSym> : <div className="white"></div>}
+                <button className="SearchButton">
                   <Link
                     to={{
                       pathname: "/ListUp",
@@ -53,14 +52,14 @@ class Checked extends Component {
         {({ removeSymptoms }) =>
           symptoms.map((symptom, index) => (
             <div className="checkedBox" key={index}>
-              <button
+              {symptom.name}
+              <button className="removeBtn"
                 onClick={() => {
                   removeSymptoms(symptom);
                 }}
               >
-                삭제
+                X
               </button>
-              {symptom.name}
             </div>
           ))
         }

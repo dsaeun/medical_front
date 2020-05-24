@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import Header from './component/Header';
+import ContentHeader from './component/ContentHeader';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import CheckBoxContainer from "./container/CheckBoxContainer";
 import ListUp from './page/ListUp';
