@@ -11,7 +11,7 @@ class CheckSym extends Component {
   getSymptomData = async () => {
     const { partId } = this.props;
     const result = await axios.get(
-      `${process.env.REACT_APP_API_HOST}/symptoms?part_ids=${partId}`
+      `${process.env.REACT_APP_API_HOST}${process.env.REACT_APP_PORT}/symptoms?part_ids=${partId}`
     );
     this.setState({
       symptomData: result.data,

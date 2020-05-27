@@ -12,7 +12,7 @@ class Detail extends Component {
     const { id } = this.props.location.state;
 
     const result = await axios.get(
-      `${process.env.REACT_APP_API_HOST}/diseases/${id}`
+      `${process.env.REACT_APP_API_HOST}${process.env.REACT_APP_PORT}/diseases/${id}`
     );
 
     this.setState({

@@ -25,7 +25,7 @@ class ListUp extends Component {
     const queryString = querystring.stringify(query);
 
     const result = await axios.get(
-      `${process.env.REACT_APP_API_HOST}/diseases?${queryString}`
+      `${process.env.REACT_APP_API_HOST}${process.env.REACT_APP_PORT}/diseases?${queryString}`
     );
     this.setState({
       diseasesData: result.data,
