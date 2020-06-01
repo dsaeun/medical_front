@@ -253,7 +253,7 @@ ul li:hover label{
   bottom:50px;
   left:300px;
   position: absolute;
-  color:white;
+  color:black;
   font-size:18px;
 }
 
@@ -270,12 +270,6 @@ ul li:hover label{
 
 span{
   margin:5px;
-}
-
-.backImg{
-  width:1980px;
-  height:880px;
-  top:100px;
 }
 
 .homeContent{
