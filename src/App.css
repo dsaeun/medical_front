@@ -3,37 +3,54 @@
   padding:20px;
 }
 
+.homeMenu{
+  background:white;
+  padding:20px;
+}
+
 .findParmacy{
   padding-right: 100px;
 }
 
-.menu ul {
+.homeMenu, .menu ul {
   list-style:none;
   float:right;
   margin-top:50px;
 }
 
-.menu li {
+.homeMenuList, .menuList{
+  width:1920px;
+  margin:0 auto;
+}
+
+.homeMenu, .menu li {
   margin:20px;
   border : 0;
   float: left;
   padding-top: 20px;
 }
 
-a{
-  text-decoration: none;
+.menuList a{
   color:white;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.homeMenuList a{
+  color:black;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .contentalign{
   margin: 0 auto;
-  width: 60%;
+  width: 1280px;
 }
 
 .partstyle{
   background-color: rgba(121, 200, 206, 0.5);
   width:30%;
-  height:450px;
+  height:500px;
   float:left;
   padding:20px;
   border-radius: 20px;
@@ -44,7 +61,7 @@ a{
 .symstyle{
   background-color: rgba(121, 200, 206, 0.5);
   width:60%;
-  height:450px;
+  height:500px;
   float:left;
   margin-left: 10px;
   padding:20px;
@@ -54,7 +71,7 @@ a{
 }
 
 .logo{
-  width:200px;
+  width:250px;
   margin-top: 70px;
   margin-left: 120px;
 }
@@ -79,10 +96,19 @@ input[radio]{
 
 .SearchButton {
   width:100px;
-  height:30px;
+  height:40px;
   margin:20px;
-  float:left;
+  align-items: left;
   background-color: rgb(4, 73, 95);
+}
+
+a{
+  text-decoration: none;
+}
+
+.SearchButton a{
+  color:white;
+  font-size: 18px;
 }
 
 .listup{
@@ -179,13 +205,19 @@ h1 {
 
 .white{
   background-color: white;
-  width:500px;
-  height:450px;
-  float:left;
+  width:60%;
+  height:500px;
   padding:20px;
+  float:left;
+  margin-left: 10px;
+  padding:20px;
+  border-radius: 20px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
 .partLabel{
+
 }
 
 ul li label{
@@ -216,15 +248,18 @@ ul li:hover label{
 }
 
 .intro{
-  background-color: rgba(118, 118, 151, 0.2);
+  background-color: rgba(255, 255, 255, 0.25);
   padding:40px;
-  bottom:0px;
+  bottom:50px;
+  left:300px;
   position: absolute;
+  color:white;
+  font-size:18px;
 }
 
 .alignHome{
   margin: 0 auto;
-  width: 60%;
+  width: 1280px;
   height: 500px;
   position: relative;
 }
@@ -235,4 +270,15 @@ ul li:hover label{
 
 span{
   margin:5px;
+}
+
+.backImg{
+  width:1980px;
+  height:880px;
+  top:100px;
+}
+
+.homeContent{
+  width:1920px;
+  height:880px;
 }

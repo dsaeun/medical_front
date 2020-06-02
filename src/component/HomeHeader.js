@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import '../App.css';
-import logo from '../image/logowhite.png';
+import logo from '../image/logo.png';
 import {Link} from "react-router-dom";
 
-class Header extends Component {
+class HomeHeader extends Component {
   render(){
     return (
       <header className="menu">
@@ -21,4 +21,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default HomeHeader;

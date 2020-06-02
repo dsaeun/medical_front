@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
 import Header from './component/Header';
-import ContentHeader from './component/ContentHeader';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import CheckBoxContainer from "./container/CheckBoxContainer";
 import ListUp from './page/ListUp';
@@ -11,14 +10,15 @@ import Parmacy from './page/Parmacy';
 import Medicine from './page/Medicine';
 import Home from './page/Home';
 import MDetail from './page/MDetail';
+//import HomeHeader from './component/HomeHeader';
 
 class App extends Component {
-  render(){
+   render(){
     return (
       <div>
         <Router>
         <div>
-          <Header></Header>
+          <Header/>
           <Switch>
             <Route exact path="/" component={Home}></Route>
             <Route path="/Home" component={Home}></Route>
