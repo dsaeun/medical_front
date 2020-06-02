@@ -6,8 +6,8 @@ import {Link} from "react-router-dom";
 class HomeHeader extends Component {
   render(){
     return (
-      <header className="menu">
-        <div className="menuList">
+      <header className="homeMenu">
+        <div className="homeMenuList">
           <Link to="./Home"><img className="logo" src={logo} aria-hidden alt="logo image"></img></Link>
           <ul>
             <li><Link to="./Checkbox">증상정보 찾기</Link></li>
