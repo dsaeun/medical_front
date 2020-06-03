@@ -48,7 +48,7 @@ class DetailInfo extends Component {
   };
 
   render() {
-    const { name, cure, sym, img, hos } = this.props;
+    const { name, cure, sym, hos } = this.props;
     const symptomList = sym.map((symptom, index) => (
       <span key={index}>
         {symptom.name}
@@ -56,16 +56,6 @@ class DetailInfo extends Component {
     ));
     return (
       <table>
-        <tr>
-          <td rowSpan="3">
-            <img
-              className="detailimage"
-              src={img}
-              aria-hidden
-              alt="disimage"
-            ></img>
-          </td>
-        </tr>
         <tr>
           <td><h3>{name}</h3></td>
         </tr>

@@ -54,19 +54,9 @@ class ListUp extends Component {
 
 class ListUpInfo extends Component {
   render() {
-    const { name, images, id, symptoms } = this.props.disease;
+    const { name, id, symptoms } = this.props.disease;
     return (
       <table className="listTable">
-        <tr>
-          <td rowSpan="3">
-            <img
-              className="disimage"
-              src={images}
-              aria-hidden
-              alt="disimage"
-            ></img>
-          </td>
-        </tr>
         <tr>
           <td>
             <Link to={{
