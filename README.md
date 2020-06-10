@@ -10,4 +10,4 @@
  ### NPM 패키지 설치
  <pre>npm i</pre>
 ## 실행
-<code>npm start</code> 명령으로 렌더링 서버를 실행합니다.   
+<code>npm start</code> 명령으로 렌더링 서버를 실행합니다!   
