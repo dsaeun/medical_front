@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <div>
         <Router>
-        <div>
+        <div className="viewContain">
           <Header/>
           <Switch>
             <Route exact path="/" component={Home}></Route>
