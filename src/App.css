@@ -276,3 +276,10 @@ span{
   width:1920px;
   height:880px;
 }
+
+.viewContain{
+  width:100%;
+  min-width: 1920px;
+  margin:0 auto;
+  overflow:hidden;
+}
