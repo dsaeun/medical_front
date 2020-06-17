@@ -57,17 +57,17 @@ class DetailInfo extends Component {
     return (
       <table>
         <tr>
-          <td><h3>{name}</h3></td>
+          <td><h2>{name}</h2></td>
         </tr>
         <tr>
-          <td>
+          <td className="detailTD">
           증상 : {symptomList}</td>
         </tr>
         <tr>
-          <td>치료법 : {cure}</td>
+          <td className="detailTD">치료법 : {cure}</td>
         </tr>
         <tr>
-          <td>진료 병원 : {hos}</td>
+          <td className="detailTD">진료 병원 : {hos}</td>
         </tr>
       </table>
     );
