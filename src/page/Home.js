@@ -4,7 +4,10 @@ import '../App.css';
 class Home extends Component {
   render(){
     return (
-      <div className="homeContent">        
+      <div className="homeContent">
+        <div className="title">
+          병원 어디가
+        </div>        
         <div className="intro">
           병원 어디가는 자신이 겪는 질병에 대한 증상을 체크하고,<br></br>
           그 증상과 가장 가까운 질병을 찾을 수 있는 웹사이트입니다.<br></br>
