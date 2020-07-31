@@ -6,7 +6,7 @@ class Home extends Component {
     return (
       <div className="homeContent">
         <div className="title">
-          병원 어디가
+
         </div>        
         <div className="intro">
           병원 어디가는 자신이 겪는 질병에 대한 증상을 체크하고,<br></br>

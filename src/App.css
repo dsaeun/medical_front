@@ -193,7 +193,19 @@ h1 {
   display:inline-block;
 }
 
+.searchSymptom{
+  width:90%;
+  height:35px;
+  display:inline-block;
+}
+
 .medicineBtn{
+  width:8%;
+  height: 41px;
+  display:inline-block;
+}
+
+.SymptomBtn{
   width:8%;
   height: 41px;
   display:inline-block;

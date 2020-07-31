@@ -4,6 +4,7 @@ import CheckSym from "../component/CheckSym";
 import CheckPart from "../component/CheckPart";
 import { PartConsumer, SymptomsConsumer } from "../container/CheckBoxContainer";
 import { Link } from "react-router-dom";
+import _ from "lodash"
 
 class CheckBox extends Component {
   state = {
@@ -18,19 +19,25 @@ class CheckBox extends Component {
             {({ symptoms }) => (
               <div className="contentalign">
                 <h1>증상정보 찾기</h1>
-                <div>
-                  {symptoms && <Checked symptoms={symptoms}></Checked>}
-                </div>
+                <div>{!_.isEmpty(symptoms) && <Checked symptoms={symptoms}></Checked>}</div>
                 <CheckPart></CheckPart>
-                {part ? <CheckSym partId={part}></CheckSym> : <div className="white"></div>}
+                {part ? (
+                  <CheckSym partId={part}></CheckSym>
+                ) : (
+                  <div className="white"></div>
+                )}
                 <button className="SearchButton">
                   <Link
-                    to={{
-                      pathname: "/ListUp",
-                      state: {
-                        symptoms,
-                      },
-                    }}
+                    to={
+                      !_.isEmpty(symptoms)
+                        ? {
+                            pathname: "/ListUp",
+                            state: {
+                              symptoms,
+                            },
+                          }
+                        : "#"
+                    }
                   >
                     Search
                   </Link>
@@ -53,7 +60,8 @@ class Checked extends Component {
           symptoms.map((symptom, index) => (
             <div className="checkedBox" key={index}>
               {symptom.name}
-              <button className="removeBtn"
+              <button
+                className="removeBtn"
                 onClick={() => {
                   removeSymptoms(symptom);
                 }}
