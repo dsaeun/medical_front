@@ -7,10 +7,9 @@ import ListUp from './page/ListUp';
 import Detail from './page/Detail';
 import Hospital from './page/Hospital';
 import Parmacy from './page/Parmacy';
-import Medicine from './page/Medicine';
 import Home from './page/Home';
 import MDetail from './page/MDetail';
-//import HomeHeader from './component/HomeHeader';
+import MedicineContainer from "./container/MedicineContainer";
 
 class App extends Component {
    render(){
@@ -27,7 +26,7 @@ class App extends Component {
             <Route path="/Detail" component={Detail}></Route>
             <Route path="/Hospital" component={Hospital}></Route>
             <Route path="/Parmacy" component={Parmacy}></Route>
-            <Route path="/Medicine" component={Medicine}></Route>
+            <Route path="/Medicine" component={MedicineContainer}></Route>
             <Route path="/MDetail" component={MDetail}></Route>
           </Switch>
         </div>

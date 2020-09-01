@@ -60,7 +60,7 @@ class ListUpInfo extends Component {
         <tr>
           <td>
             <Link to={{
-              pathname: "/detail",
+              pathname: "/Detail",
               state: {
                 id,
               }
