@@ -47,23 +47,13 @@ class DrugInfo extends Component {
     return (
       <table className="listTable">
         <tr>
-          <td rowSpan="3">
-            <img
-              className="disimage"
-              src={disimage}
-              aria-hidden
-              alt="disimage"
-            ></img>
-          </td>
-        </tr>
-        <tr>
           <td>
             <Link to={{
               pathname: "/MDetail",
               state: {
                 id: this.props.id,
               }
-            }}>{this.props.name}</Link>
+            }} className="name">{this.props.name}</Link>
           </td>
         </tr>
         <tr>

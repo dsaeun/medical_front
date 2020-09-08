@@ -50,26 +50,16 @@ class MedicineInfo extends Component {
     return (
       <table>
         <tr>
-          <td className="detailTable" rowSpan="3">
-            <img
-              className="detailimage"
-              src={disimage}
-              aria-hidden
-              alt="disimage"
-            ></img>
-          </td>
+          <td><h2>{name}</h2></td>
         </tr>
         <tr>
-          <td className="detailTable">{name}</td>
+          <td className="detailTD">{description}</td>
         </tr>
         <tr>
-          <td className="detailTable">{description}</td>
+          <td className="detailTD">{ingredients}</td>
         </tr>
         <tr>
-          <td className="detailTable">{ingredients}</td>
-        </tr>
-        <tr>
-          <td className="detailTable">{side_effects}</td>
+          <td className="detailTD">{side_effects}</td>
         </tr>
       </table>
     );
