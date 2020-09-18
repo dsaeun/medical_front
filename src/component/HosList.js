@@ -1,39 +1,43 @@
-import React, {Component} from 'react';
-import '../App.css';
+import React, { Component } from 'react'
+import '../App.css'
 
-class Hoslist extends Component{
+class Hoslist extends Component {
     constructor(props) {
-        super(props);
+        super(props)
         this.state = {
-            hosData: [
-                {hos : "안과"},
-                {hos : "내과"}
-            ]
-        };
-      }
+            hosData: [{ hos: '안과' }, { hos: '내과' }],
+        }
+    }
 
-    render(){
-        return(
+    render() {
+        return (
             <div className="hospitalList">
                 <ul className="checklist">
-            {this.state.hosData.map((hosDes, i) => {
-              return (<HosInfo hos={hosDes.hos}
-                key={i}/>);
-                })}
-          </ul>
+                    {this.state.hosData.map((hosDes, i) => {
+                        return <HosInfo hos={hosDes.hos} key={i} />
+                    })}
+                </ul>
             </div>
-        );
+        )
     }
 }
 
-class HosInfo extends Component{
-    render(){
-      return(
-        <li className="checkli">
-          <input type="checkbox" name="hos" value={this.props.hos}/>{this.props.hos}
-        </li>
-      );
+class HosInfo extends Component {
+    render() {
+        return (
+            <li className="checkli">
+                <input
+                    type="checkbox"
+                    name="hos"
+                    value={this.props.hos}
+                    onChange={(event) => {
+                        // event.target.value
+                    }}
+                />
+                {this.props.hos}
+            </li>
+        )
     }
-  }  
+}
 
-export default Hoslist;
+export default Hoslist

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../App.css";
-import disimage from "../image/disimage.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
