@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../App.css";
-import disimage from "../image/disimage.png";
 import axios from "axios";
 
 class Detail extends Component {

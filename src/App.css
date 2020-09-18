@@ -305,3 +305,7 @@ table{
   font-size:25px;
   font-weight: bold;
 }
+
+.hosinfo{
+  position: relative;
+}
