@@ -50,7 +50,7 @@ class Hospital extends Component {
             // console.log(subject)
             const url =
                 `/B551182/hospInfoService/getHospBasisList?serviceKey=${process.env.REACT_APP_PUBLIC_DATA_CLIENT_ID}&` +
-                `numOfRows=50&dgsbjtCd=12&xPos=${longitude}&yPos=${latitude}&radius=300`
+                `numOfRows=50&xPos=${longitude}&yPos=${latitude}&radius=300`
             try {
                 const {
                     data: {
