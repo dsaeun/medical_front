@@ -1,20 +1,19 @@
 import React, { Component } from 'react'
 import '../App.css'
-import HosList from '../component/HosList'
 import axios from 'axios'
 import HosInformation from '../component/HosInformation'
 import dotenv from 'dotenv'
 import { Marker, NaverMap, RenderAfterNavermapsLoaded } from 'react-naver-maps'
 
-dotenv.config();
+dotenv.config()
 
 class Hospital extends Component {
     state = {
-        hosData: [{ hos: '12' }, { hos: '01' }],
+        hosData: [{ hos: '전체' }, { hos: '12' }, { hos: '01' }],
         subject: '',
         hospitals: [],
-        latitude: 37.3595704,
-        longitude: 127.105399,
+        latitude: 37.576813,
+        longitude: 126.976773,
         isLoading: true,
         information_visible: false,
         yadmNm: '',
@@ -43,14 +42,14 @@ class Hospital extends Component {
      * @returns {Promise<void>}
      */
     componentDidUpdate = async () => {
-        const { latitude, longitude, isLoading } = this.state
-        const { subject } = this.props
+        const { latitude, longitude, isLoading, subject } = this.state
 
-        if (isLoading) {
-            // console.log(subject)
+        if (isLoading || subject) {
+            console.log(subject)
+            const default_subject = subject === '전체' ? '' : subject;
             const url =
                 `/B551182/hospInfoService/getHospBasisList?serviceKey=${process.env.REACT_APP_PUBLIC_DATA_CLIENT_ID}&` +
-                `numOfRows=50&xPos=${longitude}&yPos=${latitude}&radius=300`
+                `numOfRows=50&dgsbjtCd=${default_subject}&xPos=${longitude}&yPos=${latitude}&radius=1000`
             try {
                 const {
                     data: {
@@ -76,16 +75,20 @@ class Hospital extends Component {
             } catch (error) {
                 console.log(error)
             } finally {
-                this.setState({ isLoading: false })
+                this.setState({
+                    isLoading: false,
+                    subject: '',
+                })
             }
         }
     }
 
     render() {
-        const { subject, hospitals, information_visible, yadmNm } = this.state
+        const { hospitals, information_visible, latitude, longitude,
+            yadmNm } = this.state
 
+        // 병원 정보 렌더링
         const information = (yadmNm) => {
-            console.log("this")
             this.setState({
                 information_visible: true,
                 yadmNm: yadmNm,
@@ -101,7 +104,7 @@ class Hospital extends Component {
                             return (
                                 <li className="checkli" key={i}>
                                     <input
-                                        type="checkbox"
+                                        type="radio"
                                         name="hos"
                                         value={hosDes.hos}
                                         onChange={(event) => {
@@ -136,11 +139,13 @@ class Hospital extends Component {
                                 width: '100%',
                                 height: '400px',
                             }}
-                            defaultCenter={{ lat: 37.3595704, lng: 127.105399 }}
-                            defaultZoom={10}
+                            defaultCenter={{ lat: latitude, lng: longitude }}
+                            center={{ lat: latitude, lng: longitude }}
+                            defaultZoom={15}
                             naverRef={(ref) => {
                                 this.mapRef = ref
                             }}
+                            zoomControl={true}
                         >
                             {hospitals.map((hospital, index) => (
                                 <Marker
@@ -150,6 +155,7 @@ class Hospital extends Component {
                                     }}
                                     key={index}
                                     onClick={() => information(hospital.yadmNm)}
+                                    title={hospital.yadmNm}
                                 />
                             ))}
                             {/*<Marker*/}
@@ -157,6 +163,11 @@ class Hospital extends Component {
                             {/*/>*/}
                         </NaverMap>
                     </RenderAfterNavermapsLoaded>
+                    <button onClick={() => {
+
+                    }}>
+                        현재 위치
+                    </button>
                 </div>
                 {information_visible ? (
                     <HosInformation yadmNm={yadmNm} />
