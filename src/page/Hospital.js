@@ -4,19 +4,20 @@ import axios from 'axios'
 import HosInformation from '../component/HosInformation'
 import dotenv from 'dotenv'
 import { Marker, NaverMap, RenderAfterNavermapsLoaded } from 'react-naver-maps'
+import subjectList from '../utils/subjectList'
 
 dotenv.config()
 
 class Hospital extends Component {
     state = {
-        hosData: [{ hos: '전체' }, { hos: '12' }, { hos: '01' }],
+        subjectList: subjectList,
         subject: '',
         hospitals: [],
         latitude: 37.576813,
         longitude: 126.976773,
         isLoading: true,
         information_visible: false,
-        yadmNm: '',
+        hospital_infos: {},
     }
 
     // 현재 위치의 위도와 경도를 설정해줍니다
@@ -45,8 +46,11 @@ class Hospital extends Component {
         const { latitude, longitude, isLoading, subject } = this.state
 
         if (isLoading || subject) {
-            console.log(subject)
-            const default_subject = subject === '전체' ? '' : subject;
+            this.setState({
+                isLoading: false,
+                subject: '',
+            })
+            const default_subject = subject === '전체' ? '' : subject
             const url =
                 `/B551182/hospInfoService/getHospBasisList?serviceKey=${process.env.REACT_APP_PUBLIC_DATA_CLIENT_ID}&` +
                 `numOfRows=50&dgsbjtCd=${default_subject}&xPos=${longitude}&yPos=${latitude}&radius=1000`
@@ -69,29 +73,31 @@ class Hospital extends Component {
                     })
                 } else {
                     this.setState({
-                        hospitals: item,
+                        hospitals: [],
                     })
                 }
+
             } catch (error) {
                 console.log(error)
-            } finally {
-                this.setState({
-                    isLoading: false,
-                    subject: '',
-                })
             }
         }
     }
 
     render() {
-        const { hospitals, information_visible, latitude, longitude,
-            yadmNm } = this.state
+        const {
+            hospitals,
+            information_visible,
+            latitude,
+            longitude,
+            subjectList,
+            hospital_infos,
+        } = this.state
 
         // 병원 정보 렌더링
-        const information = (yadmNm) => {
+        const information = (hospital) => {
             this.setState({
                 information_visible: true,
-                yadmNm: yadmNm,
+                hospital_infos: hospital,
             })
         }
 
@@ -100,13 +106,13 @@ class Hospital extends Component {
                 <h1>근처병원 찾기</h1>
                 <div className="hospitalList">
                     <ul className="checklist">
-                        {this.state.hosData.map((hosDes, i) => {
+                        {subjectList.map((subject, i) => {
                             return (
                                 <li className="checkli" key={i}>
                                     <input
                                         type="radio"
                                         name="hos"
-                                        value={hosDes.hos}
+                                        value={subject.code}
                                         onChange={(event) => {
                                             if (event.target.checked) {
                                                 this.setState({
@@ -119,7 +125,7 @@ class Hospital extends Component {
                                             }
                                         }}
                                     />
-                                    {hosDes.hos}
+                                    {subject.name}
                                 </li>
                             )
                         })}
@@ -154,7 +160,7 @@ class Hospital extends Component {
                                         lng: hospital.XPos,
                                     }}
                                     key={index}
-                                    onClick={() => information(hospital.yadmNm)}
+                                    onClick={() => information(hospital)}
                                     title={hospital.yadmNm}
                                 />
                             ))}
@@ -163,14 +169,10 @@ class Hospital extends Component {
                             {/*/>*/}
                         </NaverMap>
                     </RenderAfterNavermapsLoaded>
-                    <button onClick={() => {
-
-                    }}>
-                        현재 위치
-                    </button>
+                    <button onClick={() => {}}>현재 위치</button>
                 </div>
                 {information_visible ? (
-                    <HosInformation yadmNm={yadmNm} />
+                    <HosInformation hospital_infos={hospital_infos} />
                 ) : null}
             </div>
         )
