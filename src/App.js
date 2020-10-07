@@ -6,7 +6,7 @@ import CheckBoxContainer from "./container/CheckBoxContainer";
 import ListUp from './page/ListUp';
 import Detail from './page/Detail';
 import Hospital from './page/Hospital';
-import Parmacy from './page/Parmacy';
+import Pharmacy from './page/Pharmacy';
 import Home from './page/Home';
 import MDetail from './page/MDetail';
 import MedicineContainer from "./container/MedicineContainer";
@@ -25,7 +25,7 @@ class App extends Component {
             <Route path="/ListUp" component={ListUp}></Route>
             <Route path="/Detail" component={Detail}></Route>
             <Route path="/Hospital" component={Hospital}></Route>
-            <Route path="/Parmacy" component={Parmacy}></Route>
+            <Route path="/Parmacy" component={Pharmacy}></Route>
             <Route path="/Medicine" component={MedicineContainer}></Route>
             <Route path="/MDetail" component={MDetail}></Route>
           </Switch>

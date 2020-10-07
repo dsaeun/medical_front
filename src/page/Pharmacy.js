@@ -1,23 +1,22 @@
 import React, { Component } from 'react'
 import '../App.css'
 import axios from 'axios'
-import HosInformation from '../component/HosInformation'
 import dotenv from 'dotenv'
 import { Marker, NaverMap, RenderAfterNavermapsLoaded } from 'react-naver-maps'
-import subjectList from '../utils/subjectList'
+import PharmacyInformation from '../component/PharmacyInformation'
 
 dotenv.config()
 
-class Hospital extends Component {
+class Pharmacy extends Component {
     state = {
-        subjectList: subjectList,
         subject: '',
-        hospitals: [],
+        pharmacies: [],
         latitude: 37.576813,
         longitude: 126.976773,
         isLoading: true,
+        information_loading: false,
         information_visible: false,
-        hospital_infos: {},
+        pharmacy_infos: {},
     }
 
     // 현재 위치의 위도와 경도를 설정해줍니다
@@ -50,10 +49,13 @@ class Hospital extends Component {
                 isLoading: false,
                 subject: '',
             })
-            const default_subject = subject === '전체' ? '' : subject
+            // const default_subject = subject === '전체' ? '' : subject
+            // const url =
+            //     `/B551182/pharmacyInfoService/getParmacyBasisList?ServiceKey=${process.env.REACT_APP_PUBLIC_DATA_CLIENT_ID}&` +
+            //     `numOfRows=50&xPos=${longitude}&yPos=${latitude}&radius=1000`
             const url =
-                `/B551182/hospInfoService/getHospBasisList?serviceKey=${process.env.REACT_APP_PUBLIC_DATA_CLIENT_ID}&` +
-                `numOfRows=50&dgsbjtCd=${default_subject}&xPos=${longitude}&yPos=${latitude}&radius=1000`
+                `B552657/ErmctInsttInfoInqireService/getParmacyLcinfoInqire?serviceKey=${process.env.REACT_APP_PUBLIC_DATA_CLIENT_ID}&` +
+                `WGS84_LON=${longitude}&WGS84_LAT=${latitude}`
             try {
                 const {
                     data: {
@@ -69,14 +71,13 @@ class Hospital extends Component {
 
                 if (item) {
                     this.setState({
-                        hospitals: item,
+                        pharmacies: item,
                     })
                 } else {
                     this.setState({
-                        hospitals: [],
+                        pharmacies: [],
                     })
                 }
-
             } catch (error) {
                 console.log(error)
             }
@@ -85,52 +86,33 @@ class Hospital extends Component {
 
     render() {
         const {
-            hospitals,
+            pharmacies,
             information_visible,
             latitude,
             longitude,
             subjectList,
-            hospital_infos,
+            pharmacy_infos,
+            information_loading,
         } = this.state
 
-        // 병원 정보 렌더링
-        const information = (hospital) => {
+        // 약국 정보 렌더링
+        const information = (pharmacy) => {
             this.setState({
                 information_visible: true,
-                hospital_infos: hospital,
+                pharmacy_infos: pharmacy,
+                information_loading: true,
+            })
+        }
+
+        const setLoading = () => {
+            this.setState({
+                information_loading: false,
             })
         }
 
         return (
             <div className="contentalign">
-                <h1>근처병원 찾기</h1>
-                <div className="hospitalList">
-                    <ul className="checklist">
-                        {subjectList.map((subject, i) => {
-                            return (
-                                <li className="checkli" key={i}>
-                                    <input
-                                        type="radio"
-                                        name="hos"
-                                        value={subject.code}
-                                        onChange={(event) => {
-                                            if (event.target.checked) {
-                                                this.setState({
-                                                    subject: event.target.value,
-                                                })
-                                            } else {
-                                                this.setState({
-                                                    subject: '',
-                                                })
-                                            }
-                                        }}
-                                    />
-                                    {subject.name}
-                                </li>
-                            )
-                        })}
-                    </ul>
-                </div>
+                <h1>근처약국 찾기</h1>
                 <div className="hospitalMap">
                     <RenderAfterNavermapsLoaded
                         ncpClientId={process.env.REACT_APP_CLIENT_ID}
@@ -153,15 +135,15 @@ class Hospital extends Component {
                             }}
                             zoomControl={true}
                         >
-                            {hospitals.map((hospital, index) => (
+                            {pharmacies.map((pharmacy, index) => (
                                 <Marker
                                     position={{
-                                        lat: hospital.YPos,
-                                        lng: hospital.XPos,
+                                        lat: pharmacy.latitude,
+                                        lng: pharmacy.longitude,
                                     }}
                                     key={index}
-                                    onClick={() => information(hospital)}
-                                    title={hospital.yadmNm}
+                                    onClick={() => information(pharmacy)}
+                                    title={pharmacy.dutyName}
                                 />
                             ))}
                             {/*<Marker*/}
@@ -171,11 +153,15 @@ class Hospital extends Component {
                     </RenderAfterNavermapsLoaded>
                 </div>
                 {information_visible ? (
-                    <HosInformation hospital_infos={hospital_infos} />
+                    <PharmacyInformation
+                        pharmacy_infos={pharmacy_infos}
+                        information_loading={information_loading}
+                        setLoading={setLoading}
+                    />
                 ) : null}
             </div>
         )
     }
 }
 
-export default Hospital
+export default Pharmacy
