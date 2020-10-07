@@ -177,6 +177,10 @@ td{
   padding:20px;
 }
 
+.hosinfo{
+  margin: 23px;
+}
+
 h1 {
   margin-top:40px;
   margin-bottom: 20px;
@@ -304,8 +308,4 @@ table{
 .name{
   font-size:25px;
   font-weight: bold;
-}
-
-.hosinfo{
-  position: relative;
 }
