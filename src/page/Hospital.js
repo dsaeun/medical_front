@@ -45,16 +45,18 @@ class Hospital extends Component {
     componentDidUpdate = async () => {
         const { latitude, longitude, isLoading, subject } = this.state
 
+        const default_subject = subject === 'total' ? '' : subject
+
         if (isLoading || subject) {
             this.setState({
                 isLoading: false,
                 subject: '',
             })
-            const default_subject = subject === '전체' ? '' : subject
             const url =
                 `/B551182/hospInfoService/getHospBasisList?serviceKey=${process.env.REACT_APP_PUBLIC_DATA_CLIENT_ID}&` +
                 `numOfRows=50&dgsbjtCd=${default_subject}&xPos=${longitude}&yPos=${latitude}&radius=1000`
             try {
+                
                 const {
                     data: {
                         response: {

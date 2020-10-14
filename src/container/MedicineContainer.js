@@ -4,6 +4,7 @@ import Medicine from "../page/Medicine";
 const DrugsContext = createContext({
     drugs: [],
     setDrugs: (drug) => {},
+    initializeDrugs: () => {},
 });
 
 class DrugsProvider extends Component {
@@ -17,9 +18,16 @@ class DrugsProvider extends Component {
             });
         };
 
+        this.initializeDrugs = () => {
+            this.setState({
+                drugs: [],
+            })
+        }
+
         this.state = {
             drugs: [],
             setDrugs: this.setDrugs,
+            initializeDrugs: this.initializeDrugs,
         };
     }
 

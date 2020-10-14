@@ -166,6 +166,7 @@ td{
   height:450px;
   float:left;
   padding:20px;
+  overflow-y:scroll;
 }
 
 .hospitalMap{

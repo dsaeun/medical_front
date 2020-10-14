@@ -10,12 +10,11 @@ class MedicineList extends Component {
 
   // 서버에서 약학 정보 리스트를 가져옵니다
   getDrugData = async () => {
+    const { setDrugs } = this.props;
     const result = await axios.get(
       `${process.env.REACT_APP_API_HOST}${process.env.REACT_APP_PORT}/drugs`
     );
-    this.setState({
-      drugsData: result.data,
-    });
+    setDrugs(result.data);
   };
 
   // 페이지가 마운트될 때 데이터를 불러옵니다
@@ -24,9 +23,9 @@ class MedicineList extends Component {
   }
 
   render() {
-    const { drugsData } = this.state;
+    const { drugs } = this.props;
 
-    const drugList = drugsData.map((drug) => (
+    const drugList = drugs.map((drug) => (
       <DrugInfo name={drug.name} description={drug.description} key={drug.id} id={drug.id} />
     ));
 

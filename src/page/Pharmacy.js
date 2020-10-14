@@ -55,7 +55,7 @@ class Pharmacy extends Component {
             //     `numOfRows=50&xPos=${longitude}&yPos=${latitude}&radius=1000`
             const url =
                 `B552657/ErmctInsttInfoInqireService/getParmacyLcinfoInqire?serviceKey=${process.env.REACT_APP_PUBLIC_DATA_CLIENT_ID}&` +
-                `WGS84_LON=${longitude}&WGS84_LAT=${latitude}`
+                `WGS84_LON=${longitude}&WGS84_LAT=${latitude}&numOfRows=10&pageNo=1`
             try {
                 const {
                     data: {
@@ -90,7 +90,6 @@ class Pharmacy extends Component {
             information_visible,
             latitude,
             longitude,
-            subjectList,
             pharmacy_infos,
             information_loading,
         } = this.state
@@ -151,6 +150,9 @@ class Pharmacy extends Component {
                             {/*/>*/}
                         </NaverMap>
                     </RenderAfterNavermapsLoaded>
+                    <button onClick={() => {}}>A</button>
+                    <button onClick={() => {}}>B</button>
+                    <button onClick={() => {}}>C</button>
                 </div>
                 {information_visible ? (
                     <PharmacyInformation
