@@ -1,15 +1,15 @@
-import React, { Component } from 'react'
-import '../App.css'
-import axios from 'axios'
-import dotenv from 'dotenv'
-import { Marker, NaverMap, RenderAfterNavermapsLoaded } from 'react-naver-maps'
-import PharmacyInformation from '../component/PharmacyInformation'
+import React, { Component } from "react"
+import "../App.css"
+import axios from "axios"
+import dotenv from "dotenv"
+import { Marker, NaverMap, RenderAfterNavermapsLoaded } from "react-naver-maps"
+import PharmacyInformation from "../component/PharmacyInformation"
 
 dotenv.config()
 
 class Pharmacy extends Component {
     state = {
-        subject: '',
+        subject: "",
         pharmacies: [],
         latitude: 37.576813,
         longitude: 126.976773,
@@ -42,17 +42,12 @@ class Pharmacy extends Component {
      * @returns {Promise<void>}
      */
     componentDidUpdate = async () => {
-        const { latitude, longitude, isLoading, subject } = this.state
+        const { latitude, longitude, isLoading } = this.state
 
-        if (isLoading || subject) {
+        if (isLoading) {
             this.setState({
                 isLoading: false,
-                subject: '',
             })
-            // const default_subject = subject === '전체' ? '' : subject
-            // const url =
-            //     `/B551182/pharmacyInfoService/getParmacyBasisList?ServiceKey=${process.env.REACT_APP_PUBLIC_DATA_CLIENT_ID}&` +
-            //     `numOfRows=50&xPos=${longitude}&yPos=${latitude}&radius=1000`
             const url =
                 `B552657/ErmctInsttInfoInqireService/getParmacyLcinfoInqire?serviceKey=${process.env.REACT_APP_PUBLIC_DATA_CLIENT_ID}&` +
                 `WGS84_LON=${longitude}&WGS84_LAT=${latitude}&numOfRows=10&pageNo=1`
@@ -121,10 +116,10 @@ class Pharmacy extends Component {
                         loading={<p>Maps Loading...</p>}
                     >
                         <NaverMap
-                            mapDivId={'maps-getting-started-uncontrolled'} // default: react-naver-map
+                            mapDivId={"maps-getting-started-uncontrolled"} // default: react-naver-map
                             style={{
-                                width: '100%',
-                                height: '400px',
+                                width: "100%",
+                                height: "400px",
                             }}
                             defaultCenter={{ lat: latitude, lng: longitude }}
                             center={{ lat: latitude, lng: longitude }}
@@ -150,9 +145,6 @@ class Pharmacy extends Component {
                             {/*/>*/}
                         </NaverMap>
                     </RenderAfterNavermapsLoaded>
-                    <button onClick={() => {}}>A</button>
-                    <button onClick={() => {}}>B</button>
-                    <button onClick={() => {}}>C</button>
                 </div>
                 {information_visible ? (
                     <PharmacyInformation
