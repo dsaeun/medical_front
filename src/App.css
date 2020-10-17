@@ -174,11 +174,12 @@ tr td{
 }
 
 .listTable{
+  margin-top: 30px;
   padding:20px;
   height:120px;
-  width:100%;
+  margin-left:10%;
+  width:80%;
   border:1px solid rgb(4, 73, 95);
-  margin:10px;
   border-radius: 10px;
 }
 
@@ -248,10 +249,84 @@ h1 {
 }
 
 .searchMedicine{
-  width:90%;
+  width:40%;
   height:35px;
   display:inline-block;
+  margin-left:25%;
+  background-color: rgba(80,80,80);
+  border-radius: 30px 0 0 30px;
+  color:white;
 }
+
+.medicineBtn{
+  width:5%;
+  height: 41px;
+  display:inline-block;
+}
+
+.MedicineSearchDiv{
+  margin:0 auto;
+  padding-top: 50px;
+}
+
+input:focus{
+  outline: none;
+}
+
+/*input test css*/
+.searchBox {
+  position: absolute;
+  transform:  translate(-50%,50%);
+  background: #2f3640;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+  left:50%;
+}
+
+.searchBox:hover > .searchInput {
+  width: 540px;
+  padding: 0 6px;
+}
+
+.searchBox:hover > .searchButton {
+background: white;
+color : #2f3640;
+}
+
+.searchButton {
+  color: white;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2f3640;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+
+.searchInput {
+  border:none;
+  background: none;
+  outline:none;
+  float:left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+}
+
+@media screen and (max-width: 620px) {
+.searchBox:hover > .searchInput {
+  width: 150px;
+  padding: 0 6px;
+}
+}
+
 
 .searchSymptom{
   width:90%;
@@ -259,20 +334,10 @@ h1 {
   display:inline-block;
 }
 
-.medicineBtn{
-  width:8%;
-  height: 41px;
-  display:inline-block;
-}
-
 .SymptomBtn{
   width:8%;
   height: 41px;
   display:inline-block;
-}
-
-.MedicineSearchDiv{
-  margin:0 auto;
 }
 
 /*
