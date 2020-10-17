@@ -17,15 +17,19 @@ class CheckBox extends Component {
         {({ part }) => (
           <SymptomsConsumer>
             {({ symptoms }) => (
-              <div className="contentalign">
+              <div className="contentalign checkBoxHome">
                 <h1>증상정보 찾기</h1>
                 <div>{!_.isEmpty(symptoms) && <Checked symptoms={symptoms}></Checked>}</div>
                 <CheckPart></CheckPart>
-                {part ? (
+                <div className="empty"></div>
+                {part && (
+                  <CheckSym partId={part}></CheckSym>
+                )}
+                {/*{part ? (
                   <CheckSym partId={part}></CheckSym>
                 ) : (
-                  <div className="white"></div>
-                )}
+                  <span></span>
+                )}*/}
                 <button className="SearchButton">
                   <Link
                     to={
