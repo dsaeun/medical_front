@@ -48,6 +48,8 @@ html,body{
   background-color: rgba(255, 255, 255, 0.7);
   width: 1280px;
   color:black;
+  padding-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 .checkBoxHome{
@@ -92,35 +94,32 @@ input[type='radio']:checked:before {
 * { font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; }    
 
 
-.partstyle{
+.partstyle, .symstyle{
   background-color: white;
   color:black;
   box-shadow: 5px 7px 5px 7px rgba(104, 104, 128, 0.9);
   width:30%;
   height:350px;
-  margin: 0 auto;
+  /*margin: 0 auto;*/
   padding:20px;
   border-radius: 20px;
-  float:center;
   animation: fadeIn 1s ease-in-out;
+  float:left;
   /*border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
 */}
 
-.empty{
-  margin-top: 50px;
-}
-
 .symstyle{
-  background-color: rgba(121, 200, 206, 0.5);
-  width:60%;
+  width:50%;
   height:500px;
-  float:left;
   margin-left: 10px;
   padding:20px;
-  border-radius: 20px;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
+  right:0;
+  margin-left:5%;
+}
+
+.empty{
+  margin-top: 50px;
 }
 
 .logo{
@@ -457,13 +456,3 @@ label{
 input[type="radio"]:checked .partstyle{
   background-color: black;
 }
-
-/*new checkbox*/
-/*input[type="radio"] { display: none; }
-input[type="radio"] + label { font-weight: 400; font-size: 14px; }
-input[type="radio"] + label span { display: inline-block; width: 18px; height: 18px; margin: -2px 10px 0 0; vertical-align: middle; cursor: pointer; -moz-border-radius: 50%; border-radius: 50%; border: 3px solid #ffffff; }
-input[type="radio"] + label span { background-color: #fff; }
-input[type="radio"]:checked + label { color: #333; font-weight: 700; }
-input[type="radio"]:checked + label span { background-color: #ff8800; border: 2px solid #ffffff; box-shadow: 2px 2px 2px rgba(0,0,0,.1); }
-input[type="radio"] + label span, input[type="radio"]:checked + label span { -webkit-transition: background-color 0.24s linear; -o-transition: background-color 0.24s linear; -moz-transition: background-color 0.24s linear; transition: background-color 0.24s linear; }
-*/
