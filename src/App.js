@@ -15,8 +15,7 @@ class App extends Component {
    render(){
     return (
       <div>
-        <Router basename={process.env.PUBLIC_URL}>
-        {/*<Router>*/}
+        <Router>
         <div className="viewContain">
           <Header/>
           <Switch>
