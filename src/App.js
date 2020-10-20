@@ -1,13 +1,36 @@
 import React, {Component} from 'react';
 import './App.css';
+import Header from './component/Header';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import CheckBoxContainer from "./container/CheckBoxContainer";
+import ListUp from './page/ListUp';
+import Detail from './page/Detail';
+import Hospital from './page/Hospital';
+import Pharmacy from './page/Pharmacy';
 import Home from './page/Home';
-import Checkbox from './page/Checkbox';
+import MDetail from './page/MDetail';
+import MedicineContainer from "./container/MedicineContainer";
 
 class App extends Component {
-  render(){
+   render(){
     return (
       <div>
-        <Home></Home>
+        <Router>
+        <div className="viewContain">
+          <Header/>
+          <Switch>
+            <Route exact path="/" component={Home}></Route>
+            <Route path="/Home" component={Home}></Route>
+            <Route path="/CheckBox" component={CheckBoxContainer}></Route>
+            <Route path="/ListUp" component={ListUp}></Route>
+            <Route path="/Detail" component={Detail}></Route>
+            <Route path="/Hospital" component={Hospital}></Route>
+            <Route path="/Parmacy" component={Pharmacy}></Route>
+            <Route path="/Medicine" component={MedicineContainer}></Route>
+            <Route path="/MDetail" component={MDetail}></Route>
+          </Switch>
+        </div>
+      </Router>
       </div>
     );
   }

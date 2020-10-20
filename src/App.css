@@ -1,11 +1,15 @@
 .menu{
-  width:80%;
-  height:150px;
-  margin:0 auto;
+  background: linear-gradient(30deg, rgb(4, 73, 95), rgb(121, 200, 206));
+  padding:20px;
 }
 
-.logoalign{
-  float:left;
+html,body{
+  padding:0;
+  margin:0;
+}
+
+.findParmacy{
+  padding-right: 100px;
 }
 
 .menu ul {
@@ -14,44 +18,56 @@
   margin-top:50px;
 }
 
+.menuList{
+  width:1920px;
+  margin:0 auto;
+}
+
 .menu li {
   margin:20px;
-  border : 0;
+  border : 0px;
   float: left;
   padding-top: 20px;
 }
 
-a{
-  text-decoration: none;
-  color:black;
+.menuList a{
+  color:white;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .contentalign{
   margin: 0 auto;
-  width: 60%;
+  width: 1280px;
 }
 
 .partstyle{
-  background-color: rgba(204, 204, 255, 0.4);
-  width:27%;
-  height:450px;
+  background-color: rgba(121, 200, 206, 0.5);
+  width:30%;
+  height:500px;
   float:left;
   padding:20px;
+  border-radius: 20px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .symstyle{
-  background-color: rgba(204, 204, 255, 0.4);
-  width:58%;
-  height:450px;
+  background-color: rgba(121, 200, 206, 0.5);
+  width:60%;
+  height:500px;
   float:left;
   margin-left: 10px;
   padding:20px;
+  border-radius: 20px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }
 
 .logo{
-  width:200px;
-  margin-top: 35px;
-  margin-left: 20px;
+  width:250px;
+  margin-top: 70px;
+  margin-left: 120px;
 }
 
 input[radio]{
@@ -66,8 +82,231 @@ input[radio]{
 }
 
 .checkli{
-  border:0;
   padding-top:0;
   margin-top:10px;
   display: block;
+  height:25px;
+}
+
+.SearchButton {
+  width:100px;
+  height:40px;
+  margin:20px;
+  align-items: left;
+  background-color: rgb(4, 73, 95);
+}
+
+a{
+  text-decoration: none;
+  color:black;
+}
+
+.SearchButton a{
+  color:white;
+  font-size: 18px;
+}
+
+.listup{
+  width:100%;
+  height:100%;
+}
+
+tr td{
+  text-align: left;
+}
+
+.listTable{
+  padding:20px;
+  height:120px;
+  width:100%;
+  border:1px solid rgb(4, 73, 95);
+  margin:10px;
+  border-radius: 10px;
+}
+
+.detailTable{
+    padding:20px;
+    width:100%
+}
+
+td{
+  padding:10px;
+}
+
+.disimage{
+  width:120px;
+  height:120px;
+}
+
+.detailimage{
+  width:200px;
+  height:200px;
+}
+
+.detailback{
+  margin-top: 50px;;
+  background-color: rgba(204, 204, 255, 0.4);
+  height: 100%;
+  border-radius: 10px;
+}
+
+.checkedBox{
+  display: inline-block;
+  padding:3px;
+  border-bottom:solid 1px;
+  border-color: rgba(9, 9, 78, 0.4);
+  margin-right: 20px;
+  margin-bottom: 20px;
+  vertical-align: text-bottom;
+}
+
+.hospitalList{
+  background-color: rgba(204, 204, 255, 0.4);
+  width:20%;
+  height:450px;
+  float:left;
+  padding:20px;
+  overflow-y:scroll;
+}
+
+.hospitalMap{
+  background-color: rgba(204, 204, 255, 0.4);
+  width:70%;
+  height:450px;
+  float:left;
+  margin-left: 10px;
+  padding:20px;
+}
+
+.hosinfo{
+  margin: 23px;
+}
+
+h1 {
+  margin-top:40px;
+  margin-bottom: 20px;
+}
+
+.searchMedicine{
+  width:90%;
+  height:35px;
+  display:inline-block;
+}
+
+.searchSymptom{
+  width:90%;
+  height:35px;
+  display:inline-block;
+}
+
+.medicineBtn{
+  width:8%;
+  height: 41px;
+  display:inline-block;
+}
+
+.SymptomBtn{
+  width:8%;
+  height: 41px;
+  display:inline-block;
+}
+
+.MedicineSearchDiv{
+  margin:0 auto;
+}
+
+.white{
+  background-color: white;
+  width:60%;
+  height:500px;
+  padding:20px;
+  float:left;
+  margin-left: 10px;
+  padding:20px;
+  border-radius: 20px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+
+ul li label{
+  font-weight: normal;
+}
+
+ul li:hover label{
+  font-weight:bolder;
+  transition-duration: 0.3s;
+}
+
+.removeBtn{
+  margin-left:10px;
+  color:black;
+  font-size: 9px;
+  width:20px;
+  height:20px;
+  background-color: rgba(36, 36, 48, 0.15);
+  border-radius: 5px;
+  vertical-align: text-bottom;
+  border-color:rgba(163, 163, 168, 0.3);
+}
+
+.removeBtn:hover{
+  color:white;
+  background-color:black;
+  transition-duration: 1s;
+}
+
+.intro{
+  background-color: rgba(255, 255, 255, 0.25);
+  padding:40px;
+  bottom:50px;
+  left:300px;
+  position: absolute;
+  color:black;
+  font-size:18px;
+}
+
+.alignHome{
+  margin: 0 auto;
+  width: 1280px;
+  height: 500px;
+  position: relative;
+}
+
+span{
+  margin:5px;
+}
+
+.homeContent{
+  width:1920px;
+  height:880px;
+}
+
+.viewContain{
+  width:100%;
+  min-width: 1920px;
+  margin:0 auto;
+  overflow:hidden;
+}
+
+.title{
+  font-size : 70px;
+  padding:40px;
+  top:300px;
+  right:300px;
+  position: absolute;
+  color:black;
+}
+
+.detailTD{
+  padding-bottom:100px;
+}
+
+table{
+  font-size:18px;
+}
+
+.name{
+  font-size:25px;
+  font-weight: bold;
 }
