@@ -4,6 +4,7 @@ import axios from "axios"
 import dotenv from "dotenv"
 import { Marker, NaverMap, RenderAfterNavermapsLoaded } from "react-naver-maps"
 import PharmacyInformation from "../component/PharmacyInformation"
+import _ from 'lodash'
 
 dotenv.config()
 
@@ -62,12 +63,20 @@ class Pharmacy extends Component {
                     },
                 } = await axios.get(url)
 
-                console.log(item)
-
                 if (item) {
-                    this.setState({
-                        pharmacies: item,
-                    })
+                    // 객체가 전달되었을 때, 배열로 바꿔줌
+                    if (!_.isArray(item)) {
+                        let nextArray = [];
+                        nextArray = nextArray.concat(item);
+                        this.setState({
+                            pharmacies: nextArray,
+                        })
+                    } else {
+                        // 배열로 전달되었을 때
+                        this.setState({
+                            pharmacies: item,
+                        })
+                    }
                 } else {
                     this.setState({
                         pharmacies: [],

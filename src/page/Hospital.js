@@ -5,6 +5,7 @@ import HosInformation from '../component/HosInformation'
 import dotenv from 'dotenv'
 import { Marker, NaverMap, RenderAfterNavermapsLoaded } from 'react-naver-maps'
 import subjectList from '../utils/subjectList'
+import _ from 'lodash';
 
 dotenv.config()
 
@@ -67,12 +68,20 @@ class Hospital extends Component {
                     },
                 } = await axios.get(url)
 
-                console.log(item)
-
                 if (item) {
-                    this.setState({
-                        hospitals: item,
-                    })
+                    // 객체가 전달되었을 때, 배열로 바꿔줌
+                    if (!_.isArray(item)) {
+                        let nextArray = [];
+                        nextArray = nextArray.concat(item);
+                        this.setState({
+                            hospitals: nextArray,
+                        })
+                    } else {
+                        // 배열로 전달되었을 때
+                        this.setState({
+                            hospitals: item,
+                        })
+                    }
                 } else {
                     this.setState({
                         hospitals: [],
