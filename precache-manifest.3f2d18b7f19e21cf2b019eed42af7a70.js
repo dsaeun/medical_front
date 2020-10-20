@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e97bc01169ddbf57aab4f83d674ebee7",
+    "revision": "c8e5db9628dcb39b4fc3d6114450595a",
     "url": "/medical_front/index.html"
   },
   {
-    "revision": "892baf330468359f4c79",
+    "revision": "adae1da48058dbd02255",
     "url": "/medical_front/static/css/main.221e4c27.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/medical_front/static/js/2.23f16124.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "892baf330468359f4c79",
-    "url": "/medical_front/static/js/main.51c27436.chunk.js"
+    "revision": "adae1da48058dbd02255",
+    "url": "/medical_front/static/js/main.741416dd.chunk.js"
   },
   {
     "revision": "949e37d1e0635743ced1",
