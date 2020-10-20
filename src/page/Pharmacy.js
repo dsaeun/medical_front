@@ -49,19 +49,13 @@ class Pharmacy extends Component {
             this.setState({
                 isLoading: false,
             })
-            const url =
-                `B552657/ErmctInsttInfoInqireService/getParmacyLcinfoInqire?serviceKey=${process.env.REACT_APP_PUBLIC_DATA_CLIENT_ID}&` +
-                `WGS84_LON=${longitude}&WGS84_LAT=${latitude}&numOfRows=10&pageNo=1`
             try {
                 const {
-                    data: {
-                        response: {
-                            body: {
-                                items: { item },
-                            },
-                        },
-                    },
-                } = await axios.get(url)
+                    data: item
+                } = await axios.post(`${process.env.REACT_APP_API_HOST}${process.env.REACT_APP_PORT}/pharmacies`, {
+                    longitude,
+                    latitude,
+                })
 
                 if (item) {
                     // 객체가 전달되었을 때, 배열로 바꿔줌

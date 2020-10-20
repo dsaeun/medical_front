@@ -53,20 +53,14 @@ class Hospital extends Component {
                 isLoading: false,
                 subject: '',
             })
-            const url =
-                `/B551182/hospInfoService/getHospBasisList?serviceKey=${process.env.REACT_APP_PUBLIC_DATA_CLIENT_ID}&` +
-                `numOfRows=50&dgsbjtCd=${default_subject}&xPos=${longitude}&yPos=${latitude}&radius=1000`
             try {
-                
                 const {
-                    data: {
-                        response: {
-                            body: {
-                                items: { item },
-                            },
-                        },
-                    },
-                } = await axios.get(url)
+                    data: item
+                } = await axios.post(`${process.env.REACT_APP_API_HOST}${process.env.REACT_APP_PORT}/hospitals`, {
+                    default_subject,
+                    longitude,
+                    latitude,
+                })
 
                 if (item) {
                     // 객체가 전달되었을 때, 배열로 바꿔줌
@@ -144,7 +138,8 @@ class Hospital extends Component {
                 </div>
                 <div className="hospitalMap">
                     <RenderAfterNavermapsLoaded
-                        ncpClientId={process.env.REACT_APP_CLIENT_ID}
+                        // ncpClientId={process.env.REACT_APP_CLIENT_ID}
+                        ncpClientId="rt6tsuiaj3"
                         // Naver Cloud Platform 유저의 경우 props.clientId 대신 props.ncpClientId를 사용합니다.
                         // ncpClientId={YOUR_NCP_CLIENT_ID}
                         error={<p>Maps Load Error</p>}
