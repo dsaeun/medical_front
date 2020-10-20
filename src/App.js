@@ -15,7 +15,7 @@ class App extends Component {
    render(){
     return (
       <div>
-        <Router>
+        <Router basename={process.env.REACT_APP_DEPLOY_URL}>
         <div className="viewContain">
           <Header/>
           <Switch>
