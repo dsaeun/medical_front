@@ -54,7 +54,7 @@ class Hospital extends Component {
                 subject: '',
             })
             const url =
-                `/B551182/hospInfoService/getHospBasisList?serviceKey=${process.env.REACT_APP_PUBLIC_DATA_CLIENT_ID}&` +
+                `/B551182/hospInfoService/getHospBasisList?serviceKey=${process.env.PUBLIC_DATA_CLIENT_ID}&` +
                 `numOfRows=50&dgsbjtCd=${default_subject}&xPos=${longitude}&yPos=${latitude}&radius=1000`
             try {
                 
@@ -144,7 +144,7 @@ class Hospital extends Component {
                 </div>
                 <div className="hospitalMap">
                     <RenderAfterNavermapsLoaded
-                        ncpClientId={process.env.REACT_APP_CLIENT_ID}
+                        ncpClientId={process.env.CLIENT_ID}
                         // Naver Cloud Platform 유저의 경우 props.clientId 대신 props.ncpClientId를 사용합니다.
                         // ncpClientId={YOUR_NCP_CLIENT_ID}
                         error={<p>Maps Load Error</p>}
