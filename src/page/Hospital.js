@@ -57,7 +57,7 @@ class Hospital extends Component {
             //     `/B551182/hospInfoService/getHospBasisList?serviceKey=${process.env.REACT_APP_PUBLIC_DATA_CLIENT_ID}&` +
             //     `numOfRows=50&dgsbjtCd=${default_subject}&xPos=${longitude}&yPos=${latitude}&radius=1000`
             const url =
-                `http://apis.data.go.kr/B551182/hospInfoService/getHospBasisList?serviceKey=x2txN4I6zPiE8J2mPQgCwpM7armRxvt2cHr82DuqfWc1UfH15tG8j0qQbBHTSTqFdn99ts0c8w4HBChtC2vZBQ%3D%3D&` +
+                `/B551182/hospInfoService/getHospBasisList?serviceKey=x2txN4I6zPiE8J2mPQgCwpM7armRxvt2cHr82DuqfWc1UfH15tG8j0qQbBHTSTqFdn99ts0c8w4HBChtC2vZBQ%3D%3D&` +
                 `numOfRows=50&dgsbjtCd=${default_subject}&xPos=${longitude}&yPos=${latitude}&radius=1000`
             try {
                 
