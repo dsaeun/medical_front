@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/medical_front/static/css/main.221e4c27.chunk.css",
-    "main.js": "/medical_front/static/js/main.741416dd.chunk.js",
-    "main.js.map": "/medical_front/static/js/main.741416dd.chunk.js.map",
+    "main.js": "/medical_front/static/js/main.386ad714.chunk.js",
+    "main.js.map": "/medical_front/static/js/main.386ad714.chunk.js.map",
     "runtime-main.js": "/medical_front/static/js/runtime-main.ea04d623.js",
     "runtime-main.js.map": "/medical_front/static/js/runtime-main.ea04d623.js.map",
     "static/js/2.23f16124.chunk.js": "/medical_front/static/js/2.23f16124.chunk.js",
     "static/js/2.23f16124.chunk.js.map": "/medical_front/static/js/2.23f16124.chunk.js.map",
     "index.html": "/medical_front/index.html",
-    "precache-manifest.3f2d18b7f19e21cf2b019eed42af7a70.js": "/medical_front/precache-manifest.3f2d18b7f19e21cf2b019eed42af7a70.js",
+    "precache-manifest.7dcd6971e52ba0b126e01576f2d91628.js": "/medical_front/precache-manifest.7dcd6971e52ba0b126e01576f2d91628.js",
     "service-worker.js": "/medical_front/service-worker.js",
     "static/css/main.221e4c27.chunk.css.map": "/medical_front/static/css/main.221e4c27.chunk.css.map",
     "static/js/2.23f16124.chunk.js.LICENSE.txt": "/medical_front/static/js/2.23f16124.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.ea04d623.js",
     "static/js/2.23f16124.chunk.js",
     "static/css/main.221e4c27.chunk.css",
-    "static/js/main.741416dd.chunk.js"
+    "static/js/main.386ad714.chunk.js"
   ]
 }
