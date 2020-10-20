@@ -27,7 +27,6 @@ class PharmacyInformation extends Component {
                 }
             }
         } = await axios.get(url)
-        console.log(item);
         this.setState({
             pharmacy_detail: item,
         })
