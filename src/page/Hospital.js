@@ -16,38 +16,20 @@ class Hospital extends Component {
         hospitals: [],
         latitude: 37.576813,
         longitude: 126.976773,
-        isLoading: true,
+        isLoading: false,
         information_visible: false,
         hospital_infos: {},
-    }
-
-    // 현재 위치의 위도와 경도를 설정해줍니다
-    handleGeoSuccess = (location) => {
-        this.setState({
-            latitude: location.coords.latitude,
-            longitude: location.coords.longitude,
-        })
+        changeAddress: '',
     }
 
     /**
-     * index.html에서 설정한 naver maps를 navermaps에 넣어줌
-     * geolocation을 이용해서 현재 위치의 위도와 경도를 받아옴
-     * reverseGeocode를 이용해서 위도, 경도를 주소로 바꿔준다.
-     * @returns {Promise<void>}
-     */
-    async componentDidMount() {
-        navigator.geolocation.getCurrentPosition(this.handleGeoSuccess)
-    }
-
-    /**
-     * handleGeoSuccess가 호출되고 상태가 업데이트되면 실행
-     * @returns {Promise<void>}
+     * 주소를 입력하고 경도, 위도가 변경되면 실행됩니다
+     * 계산된 위경도를 기반으로 병원 정보를 요청합니다
      */
     componentDidUpdate = async () => {
         const { latitude, longitude, isLoading, subject } = this.state
 
         const default_subject = subject === 'total' ? '' : subject
-
         if (isLoading || subject) {
             this.setState({
                 isLoading: false,
@@ -175,6 +157,35 @@ class Hospital extends Component {
                             {/*/>*/}
                         </NaverMap>
                     </RenderAfterNavermapsLoaded>
+                    {/*현재 주소를 직접 입력합니다*/}
+                    <input onChange={(event) => {
+                        this.setState({
+                            changeAddress: event.target.value,
+                        })
+                    }}/>
+                    {/*입력한 주소를 좌표로 변환하는 카카오 api 입니다.*/}
+                    <button onClick={ async () => {
+                        const { changeAddress } = this.state;
+                        const url = `https://dapi.kakao.com/v2/local/search/address.json?` +
+                            `query=${changeAddress}`
+                        const { data: {
+                            documents
+                        } } = await axios.get(url, {
+                            headers: {
+                                Authorization: `KakaoAK ${process.env.REACT_APP_KAKAO_API_ID}`
+                            }
+                        })
+                        // 결과값이 비어있는지 확인합니다
+                        if (!_.isEmpty(documents)) {
+                            this.setState({
+                                latitude: documents[0].y,
+                                longitude: documents[0].x,
+                                isLoading: true,
+                            })
+                        } else {
+                            alert("잘못된 주소입니다");
+                        }
+                    }}>검색</button>
                 </div>
                 {information_visible ? (
                     <HosInformation hospital_infos={hospital_infos} />

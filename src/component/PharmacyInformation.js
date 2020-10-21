@@ -13,20 +13,11 @@ class PharmacyInformation extends Component {
     // 약국의 상세정보(개폐시간 등)를 요청합니다.
     getPharmacyDetail = async (hpid, setLoading) => {
         setLoading();
-        const url =
-            `/B552657/ErmctInsttInfoInqireService/getParmacyBassInfoInqire?serviceKey=${process.env.REACT_APP_PUBLIC_DATA_CLIENT_ID}&` +
-            `HPID=${hpid}`
         const {
-            data: {
-                response: {
-                    body: {
-                        items: {
-                            item
-                        }
-                    }
-                }
-            }
-        } = await axios.get(url)
+            data: item
+        } = await axios.post(`${process.env.REACT_APP_API_HOST}${process.env.REACT_APP_PORT}/pharmacies-detail`, {
+            hpid,
+        })
         this.setState({
             pharmacy_detail: item,
         })
