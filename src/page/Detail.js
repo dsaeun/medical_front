@@ -57,7 +57,7 @@ class DetailInfo extends Component {
     return (
       <table>
         <tr>
-          <td><h2>{name}</h2></td>
+          <td className="detailTitle"><h1>{name}</h1></td>
         </tr>
         <tr>
           <td className="detailTD">

@@ -30,14 +30,12 @@ class Detail extends Component {
     const { name, description, ingredients, side_effects } = this.state.drugData;
     return (
       <div className="contentalign">
-        <div className="detailback">
           <MedicineInfo
             name={name}
             description={description}
             ingredients={ingredients}
             side_effects={side_effects}
           />
-        </div>
       </div>
     );
   }
@@ -49,7 +47,7 @@ class MedicineInfo extends Component {
     return (
       <table>
         <tr>
-          <td><h2>{name}</h2></td>
+          <td className="detailTD"><h1>{name}</h1></td>
         </tr>
         <tr>
           <td className="detailTD">{description}</td>

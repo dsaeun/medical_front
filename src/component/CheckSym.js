@@ -57,13 +57,23 @@ class CheckSym extends Component {
 
     return (
       <div className="symstyle">
+        <div className="box">
+        <div class="container-sym">
+      <input type="search" id="search" placeholder="Search..." />
+      </div>
+  </div>
+
+{/*기존 input
         <input className="searchSymptom" type="text" onChange={(event) => {
           this.setState({
             keyword: event.target.value,
           });
         }}/>
         <button className="SymptomBtn" onClick={this.getSymptomData}>Search</button>
+        */}
+        <div>
         <ul className="checklist">{symptomList}</ul>
+        </div>
       </div>
     );
   }
