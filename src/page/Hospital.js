@@ -131,7 +131,7 @@ class Hospital extends Component {
                             mapDivId={'maps-getting-started-uncontrolled'} // default: react-naver-map
                             style={{
                                 width: '100%',
-                                height: '400px',
+                                height: '420px',
                             }}
                             defaultCenter={{ lat: latitude, lng: longitude }}
                             center={{ lat: latitude, lng: longitude }}
@@ -158,6 +158,12 @@ class Hospital extends Component {
                         </NaverMap>
                     </RenderAfterNavermapsLoaded>
                     {/*현재 주소를 직접 입력합니다*/}
+
+                    {/*new input form */}
+                    <div className="container-sym hos">
+                        <input type="search" id="search" placeholder="Find with address" />
+                    </div>
+
                     <input onChange={(event) => {
                         this.setState({
                             changeAddress: event.target.value,

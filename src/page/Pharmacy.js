@@ -93,7 +93,7 @@ class Pharmacy extends Component {
         return (
             <div className="contentalign">
                 <h1>근처약국 찾기</h1>
-                <div className="hospitalMap">
+                <div className="pharmacyMap">
                     <RenderAfterNavermapsLoaded
                         ncpClientId={process.env.REACT_APP_CLIENT_ID}
                         // Naver Cloud Platform 유저의 경우 props.clientId 대신 props.ncpClientId를 사용합니다.
@@ -105,7 +105,7 @@ class Pharmacy extends Component {
                             mapDivId={"maps-getting-started-uncontrolled"} // default: react-naver-map
                             style={{
                                 width: "100%",
-                                height: "400px",
+                                height: "80%",
                             }}
                             defaultCenter={{ lat: latitude, lng: longitude }}
                             center={{ lat: latitude, lng: longitude }}
@@ -131,6 +131,12 @@ class Pharmacy extends Component {
                             {/*/>*/}
                         </NaverMap>
                     </RenderAfterNavermapsLoaded>
+
+                    {/*new input form */}
+        <div className="container-sym" id="phar">
+      <input type="search" id="search" placeholder="Find with address" />
+      </div>
+
                     {/*현재 주소를 직접 입력합니다*/}
                     <input onChange={(event) => {
                         this.setState({

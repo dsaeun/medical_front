@@ -21,7 +21,6 @@ class CheckBox extends Component {
                 <h1>증상정보 찾기</h1>
                 <div>{!_.isEmpty(symptoms) && <Checked symptoms={symptoms}></Checked>}</div>
                 <CheckPart></CheckPart>
-                <div className="empty"></div>
                 {part && (
                   <CheckSym partId={part}></CheckSym>
                 )}
@@ -30,6 +29,7 @@ class CheckBox extends Component {
                 ) : (
                   <span></span>
                 )}*/}
+                <div className="SearchBtnDiv">
                 <button className="SearchButton">
                   <Link
                     to={
@@ -46,6 +46,7 @@ class CheckBox extends Component {
                     Search
                   </Link>
                 </button>
+                </div>
               </div>
             )}
           </SymptomsConsumer>

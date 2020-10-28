@@ -29,18 +29,29 @@ class Medicine extends Component {
           <div className="contentalign">
             <h1>약학정보 찾기</h1>
             
-            {/*new search box */}
-            <div className="searchRoughBox">
-            <div className="searchBox">
-              <input className="searchInput"type="text" name="" placeholder="Search"/>
-              <button className="searchButton" href="#">
-                <i className="material-icons">
-                  search
-                </i>
-              </button>
-            </div>
-            </div>
+            <div class="box">
+  <div class="container-1">
+      <input type="search" id="search" placeholder="Search..." />
+  </div>
+</div>
 
+{/*new search2 
+<div class="box">
+  <div class="container-2">
+      <span class="icon"><i class="fa fa-search"></i></span>
+      <input type="search" id="search" placeholder="Search..." />
+  </div>
+</div>
+*/}
+{/* 
+            <div class="search-box">
+      <input type="text" class="search-txt" name=""placeholder="Type to search"/>
+      <a class="search-btn" href="#">
+        <i class="fas fa-search"></i>
+      </a>
+    </div>
+
+*/}
 {/*
             <div className="MedicineSearchDiv">
               <input
