@@ -28,6 +28,20 @@ class Medicine extends Component {
         {({ drugs, setDrugs, initializeDrugs }) => (
           <div className="contentalign">
             <h1>약학정보 찾기</h1>
+            
+            {/*new search box */}
+            <div className="searchRoughBox">
+            <div className="searchBox">
+              <input className="searchInput"type="text" name="" placeholder="Search"/>
+              <button className="searchButton" href="#">
+                <i className="material-icons">
+                  search
+                </i>
+              </button>
+            </div>
+            </div>
+
+{/*
             <div className="MedicineSearchDiv">
               <input
                 className="searchMedicine"
@@ -38,7 +52,7 @@ class Medicine extends Component {
               <button className="medicineBtn" onClick={() => this.onSearch(setDrugs, initializeDrugs)}>
                 Search
               </button>
-            </div>
+</div>*/}
             <MedicineList drugs={drugs} setDrugs={setDrugs}></MedicineList>
           </div>
         )}

@@ -38,6 +38,7 @@ class ListUp extends Component {
 
   render() {
     const { diseasesData } = this.state;
+    console.log(diseasesData);
     const diseaseList = diseasesData.map((disease, index) => {
       return <ListUpInfo disease={disease} key={index} />;
     });
