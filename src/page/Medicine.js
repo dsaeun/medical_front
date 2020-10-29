@@ -30,7 +30,7 @@ class Medicine extends Component {
             <h1>약학정보 찾기</h1>
 
             <div class="box">
-              <div class="container-1">
+              <div class="container-sym" id="search-Medi">
                 <input
                   type="search"
                   id="search"

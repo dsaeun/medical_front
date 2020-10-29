@@ -47,7 +47,7 @@ class MedicineInfo extends Component {
     return (
       <table>
         <tr>
-          <td className="detailTD"><h1>{name}</h1></td>
+          <td className="detailTitle"><h1>{name}</h1></td>
         </tr>
         <tr>
           <td className="detailTD">{description}</td>

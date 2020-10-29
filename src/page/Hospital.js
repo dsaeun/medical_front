@@ -114,7 +114,7 @@ class Hospital extends Component {
     }
 
     return (
-      <div className="contentalign">
+      <div className="contentalignHos">
         <h1>근처병원 찾기</h1>
         <div className="hospitalList">
           <ul className="checklist">
@@ -202,7 +202,7 @@ class Hospital extends Component {
               }}
             />
           </div>
-
+{/*
           <input
             onChange={(event) => {
               this.setState({
@@ -210,12 +210,12 @@ class Hospital extends Component {
               })
             }}
           />
-          {/*입력한 주소를 좌표로 변환하는 카카오 api 입니다.*/}
+          입력한 주소를 좌표로 변환하는 카카오 api 입니다.
           <button
             onClick={() => sendAddress}
           >
             검색
-          </button>
+          </button>*/}
         </div>
         {information_visible ? (
           <HosInformation hospital_infos={hospital_infos} />
