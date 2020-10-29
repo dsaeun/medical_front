@@ -25,8 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "aws s3 sync ./build s3://medical-front-wheredowego --profile=medical_front",
-    "invalidate": "aws cloudfront create-invalidation --profile=medical_front --distribution-id E2F2RYHMRB2Q6G --paths / /index.html /error.html /service-worker.js /manifest.json /favicon.ico"
+    "deploy": "aws s3 sync ./build s3://wheretogohos.site --profile=medical_front",
   },
   "eslintConfig": {
     "extends": "react-app"
