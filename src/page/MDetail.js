@@ -54,9 +54,9 @@ class MedicineInfo extends Component {
             <ul>
               <li className="semiTitle">
                 증상
-                  <div dangerouslySetInnerHTML={{__html: description}}/>
               </li>
             </ul>
+            <div dangerouslySetInnerHTML={{__html: description}}/>
           </td>
         </tr>
         <tr>

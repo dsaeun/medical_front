@@ -8,7 +8,7 @@ class Home extends Component {
         <div className="title">
 
         </div>        
-        <div className="catchPhrase">어디아파 병원어디가</div>
+        <div className="catchPhrase">여기아파 어디가봐?</div>
         <div className="intro">
           병원 어디가는 자신이 겪는 질병에 대한 증상을 체크하고,<br></br>
           그 증상과 가장 가까운 질병을 찾을 수 있는 웹사이트입니다.<br></br>
