@@ -61,13 +61,15 @@ class DetailInfo extends Component {
         </tr>
         <tr>
           <td className="detailTD">
-          증상 : {symptomList}</td>
+          <ul><li className="semiTitle">증상</li></ul>{symptomList}</td>
         </tr>
         <tr>
-          <td className="detailTD">치료법 : {cure}</td>
+          <td className="detailTD">
+          <ul><li className="semiTitle">치료법</li></ul>{cure}</td>
         </tr>
         <tr>
-          <td className="detailTD">진료 병원 : {hos}</td>
+          <td className="detailTD">
+          <ul><li className="semiTitle">진료 병원</li></ul>{hos}</td>
         </tr>
       </table>
     );

@@ -69,7 +69,10 @@ class ListUpInfo extends Component {
           </td>
         </tr>
         <tr>
-          <td>대표증상 : {symptoms[0].name}</td>
+          <td className="hashTag">#{symptoms[0].name}</td>
+        </tr>
+        <tr>
+         <td>description</td>{/*description 간단하게 출력 */}
         </tr>
       </table>
     );

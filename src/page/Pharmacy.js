@@ -178,20 +178,6 @@ class Pharmacy extends Component {
           </div>
 
           {/*현재 주소를 직접 입력합니다*/}
-          {/* 
-          <input
-            onChange={(event) => {
-              this.setState({
-                changeAddress: event.target.value,
-              })
-            }}
-          />
-          {/*입력한 주소를 좌표로 변환하는 카카오 api 입니다.
-          <button
-            onClick={() => sendAddress}
-          >
-            검색
-          </button>*/}
         </div>
         {information_visible ? (
           <PharmacyInformation

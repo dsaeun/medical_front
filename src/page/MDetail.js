@@ -45,18 +45,18 @@ class MedicineInfo extends Component {
   render() {
     const { name, description, ingredients, side_effects } = this.props;
     return (
-      <table>
+      <table className="detailTable">
         <tr>
-          <td className="detailTitle"><h1>{name}</h1></td>
+          <td><h1>{name}</h1></td>
         </tr>
         <tr>
-          <td className="detailTD">{description}</td>
+          <td className="detailTD"><ul><li className="semiTitle">증상</li></ul>{description}</td>
         </tr>
         <tr>
-          <td className="detailTD">{ingredients}</td>
+          <td className="detailTD"><ul><li className="semiTitle">주성분</li></ul>{ingredients}</td>
         </tr>
         <tr>
-          <td className="detailTD">{side_effects}</td>
+          <td className="detailTD"><ul><li className="semiTitle">부작용</li></ul>{side_effects}</td>
         </tr>
       </table>
     );
