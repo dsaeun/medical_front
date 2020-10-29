@@ -44,7 +44,7 @@ class ListUp extends Component {
     });
     return (
       <div className="contentalign">
-        <h1>의심 증상</h1>
+        <h1>의심 질병</h1>
         <div className="listup">
           {diseaseList}
         </div>
@@ -55,7 +55,7 @@ class ListUp extends Component {
 
 class ListUpInfo extends Component {
   render() {
-    const { name, id, symptoms } = this.props.disease;
+    const { name, id, symptoms, description } = this.props.disease;
     return (
       <table className="listTable">
         <tr>
@@ -69,7 +69,14 @@ class ListUpInfo extends Component {
           </td>
         </tr>
         <tr>
-          <td>대표증상 : {symptoms[0].name}</td>
+          <td>
+            #{symptoms[0].name}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            {description}
+          </td>
         </tr>
       </table>
     );
