@@ -202,24 +202,11 @@ class Hospital extends Component {
               }}
             />
           </div>
-{/*
-          <input
-            onChange={(event) => {
-              this.setState({
-                changeAddress: event.target.value,
-              })
-            }}
-          />
-          입력한 주소를 좌표로 변환하는 카카오 api 입니다.
-          <button
-            onClick={() => sendAddress}
-          >
-            검색
-          </button>*/}
-        </div>
-        {information_visible ? (
+          {information_visible ? (
           <HosInformation hospital_infos={hospital_infos} />
         ) : null}
+        </div>
+        
       </div>
     )
   }

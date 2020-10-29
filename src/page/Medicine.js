@@ -44,36 +44,6 @@ class Medicine extends Component {
                 />
               </div>
             </div>
-
-            {/*new search2 
-<div class="box">
-  <div class="container-2">
-      <span class="icon"><i class="fa fa-search"></i></span>
-      <input type="search" id="search" placeholder="Search..." />
-  </div>
-</div>
-*/}
-            {/* 
-            <div class="search-box">
-      <input type="text" class="search-txt" name=""placeholder="Type to search"/>
-      <a class="search-btn" href="#">
-        <i class="fas fa-search"></i>
-      </a>
-    </div>
-
-*/}
-            {/*
-            <div className="MedicineSearchDiv">
-              <input
-                className="searchMedicine"
-                type="text"
-                placeholder="약 이름"
-                onChange={(event) => this.setKeyword(event)}
-              />
-              <button className="medicineBtn" onClick={() => this.onSearch(setDrugs, initializeDrugs)}>
-                Search
-              </button>
-</div>*/}
             <MedicineList drugs={drugs} setDrugs={setDrugs}/>
           </div>
         )}

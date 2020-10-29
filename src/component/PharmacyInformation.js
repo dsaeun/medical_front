@@ -45,76 +45,71 @@ class PharmacyInformation extends Component {
         const { pharmacy_detail } = this.state;
 
         return (
-            <div className="hosinfo">
-                <p>약국명: {dutyName}</p>
+            <div className="pharinfo" id="pharinfo">
+                <h2 id="hosName">{dutyName}</h2>
                 <p>주소: {dutyAddr}</p>
                 <p>전화번호: {dutyTel1}</p>
-                <table
-                    style={{
-                        border: '1px solid #444444',
-                        borderCollapse: 'collapse',
-                    }}
-                >
+                <table className="pharTable">
                     <tbody>
                         <tr>
-                            <td style={{ border: '1px solid' }}>월요일</td>
-                            <td style={{ border: '1px solid' }}>
+                            <td>월요일</td>
+                            <td>
                                 {pharmacy_detail.dutyTime1s ? moment(pharmacy_detail.dutyTime1s, "hmm").format("HH:mm") : ''}
                                 ~
                                 {pharmacy_detail.dutyTime1c ? moment(pharmacy_detail.dutyTime1c, "hmm").format("HH:mm") : ''}
                             </td>
                         </tr>
                         <tr>
-                            <td style={{ border: '1px solid' }}>화요일</td>
-                            <td style={{ border: '1px solid' }}>
+                            <td>화요일</td>
+                            <td>
                                 {pharmacy_detail.dutyTime2s ? moment(pharmacy_detail.dutyTime2s, "hmm").format("HH:mm") : ''}
                                 ~
                                 {pharmacy_detail.dutyTime2c ? moment(pharmacy_detail.dutyTime2c, "hmm").format("HH:mm") : ''}
                             </td>
                         </tr>
                         <tr>
-                            <td style={{ border: '1px solid' }}>수요일</td>
-                            <td style={{ border: '1px solid' }}>
+                            <td>수요일</td>
+                            <td>
                                 {pharmacy_detail.dutyTime3s ? moment(pharmacy_detail.dutyTime3s, "hmm").format("HH:mm") : ''}
                                 ~
                                 {pharmacy_detail.dutyTime3c ? moment(pharmacy_detail.dutyTime3c, "hmm").format("HH:mm") : ''}
                             </td>
                         </tr>
                         <tr>
-                            <td style={{ border: '1px solid' }}>목요일</td>
-                            <td style={{ border: '1px solid' }}>
+                            <td>목요일</td>
+                            <td>
                                 {pharmacy_detail.dutyTime4s ? moment(pharmacy_detail.dutyTime4s, "hmm").format("HH:mm") : ''}
                                 ~
                                 {pharmacy_detail.dutyTime4c ? moment(pharmacy_detail.dutyTime4c, "hmm").format("HH:mm") : ''}
                             </td>
                         </tr>
                         <tr>
-                            <td style={{ border: '1px solid' }}>금요일</td>
-                            <td style={{ border: '1px solid' }}>
+                            <td>금요일</td>
+                            <td>
                                 {pharmacy_detail.dutyTime5s ? moment(pharmacy_detail.dutyTime5s, "hmm").format("HH:mm") : ''}
                                 ~
                                 {pharmacy_detail.dutyTime5c ? moment(pharmacy_detail.dutyTime5c, "hmm").format("HH:mm") : ''}
                             </td>
                         </tr>
                         <tr>
-                            <td style={{ border: '1px solid' }}>토요일</td>
-                            <td style={{ border: '1px solid' }}>
+                            <td>토요일</td>
+                            <td>
                                 {pharmacy_detail.dutyTime6s ? moment(pharmacy_detail.dutyTime6s, "hmm").format("HH:mm") : ''}
                                 ~
                                 {pharmacy_detail.dutyTime6c ? moment(pharmacy_detail.dutyTime6c, "hmm").format("HH:mm") : ''}
                             </td>
                         </tr>
                         <tr>
-                            <td style={{ border: '1px solid' }}>일요일</td>
-                            <td style={{ border: '1px solid' }}>
+                            <td>일요일</td>
+                            <td>
                                 {pharmacy_detail.dutyTime7s ? moment(pharmacy_detail.dutyTime7s, "hmm").format("HH:mm") : ''}
                                 ~
                                 {pharmacy_detail.dutyTime7c ? moment(pharmacy_detail.dutyTime7c, "hmm").format("HH:mm") : ''}
                             </td>
                         </tr>
                         <tr>
-                            <td style={{ border: '1px solid' }}>공휴일</td>
-                            <td style={{ border: '1px solid' }}>
+                            <td>공휴일</td>
+                            <td>
                                 {pharmacy_detail.dutyTime8s ? moment(pharmacy_detail.dutyTime8s, "hmm").format("HH:mm") : ''}
                                 ~
                                 {pharmacy_detail.dutyTime8c ? moment(pharmacy_detail.dutyTime8c, "hmm").format("HH:mm") : ''}
