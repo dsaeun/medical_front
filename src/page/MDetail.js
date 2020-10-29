@@ -50,7 +50,7 @@ class MedicineInfo extends Component {
           <td><h1>{name}</h1></td>
         </tr>
         <tr>
-          <td className="detailTD"><ul><li className="semiTitle">증상</li></ul>{description}</td>
+          <td className="detailTD" dangerouslySetInnerHTML={{__html: this.props.description}}><ul><li className="semiTitle">증상</li></ul>{description}</td>
         </tr>
         <tr>
           <td className="detailTD"><ul><li className="semiTitle">주성분</li></ul>{ingredients}</td>
